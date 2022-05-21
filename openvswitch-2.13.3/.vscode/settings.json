@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "latch.h": "c",
+        "array": "c",
+        "*.tcc": "c",
+        "deque": "c",
+        "string": "c",
+        "vector": "c",
+        "functional": "c",
+        "tuple": "c",
+        "memory": "c"
+    }
+}

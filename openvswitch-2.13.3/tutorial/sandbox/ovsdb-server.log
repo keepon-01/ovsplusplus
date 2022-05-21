@@ -1,0 +1,5 @@
+2022-05-17T11:51:23.296Z|00001|vlog|INFO|opened log file /home/fuiyoh/Desktop/experiment/openvswitch-2.13.3/tutorial/sandbox/ovsdb-server.log
+2022-05-17T11:51:23.302Z|00002|ovsdb_server|INFO|ovsdb-server (Open vSwitch) 2.13.3
+2022-05-17T11:51:33.314Z|00003|memory|INFO|4404 kB peak resident set size after 10.0 seconds
+2022-05-17T11:51:33.314Z|00004|memory|INFO|cells:39 monitors:0
+2022-05-21T06:37:29.262Z|00005|fatal_signal|WARN|terminating with signal 15 (Terminated)

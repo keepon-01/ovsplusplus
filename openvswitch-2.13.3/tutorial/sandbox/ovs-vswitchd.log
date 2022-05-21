@@ -1,0 +1,7 @@
+2022-05-17T11:52:44.489Z|00001|vlog|INFO|opened log file /home/fuiyoh/Desktop/experiment/openvswitch-2.13.3/tutorial/sandbox/ovs-vswitchd.log
+2022-05-17T11:52:44.490Z|00002|ovs_numa|INFO|Discovered 8 CPU cores on NUMA node 0
+2022-05-17T11:52:44.490Z|00003|ovs_numa|INFO|Discovered 1 NUMA nodes and 8 CPU cores
+2022-05-17T11:52:44.490Z|00004|reconnect|INFO|unix:/home/fuiyoh/Desktop/experiment/openvswitch-2.13.3/tutorial/sandbox/db.sock: connecting...
+2022-05-17T11:52:44.490Z|00005|reconnect|INFO|unix:/home/fuiyoh/Desktop/experiment/openvswitch-2.13.3/tutorial/sandbox/db.sock: connected
+2022-05-17T11:52:44.492Z|00006|bridge|INFO|ovs-vswitchd (Open vSwitch) 2.13.3
+2022-05-17T11:53:26.648Z|00007|memory|INFO|33060 kB peak resident set size after 42.2 seconds

@@ -1,0 +1,3 @@
+/home/mxc/Desktop/openvswitch-2.13.3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mxc/Desktop/openvswitch-2.13.3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mxc/Desktop/openvswitch-2.13.3/cmake-build-debug/CMakeFiles/openvswitch_2_13_3.dir
