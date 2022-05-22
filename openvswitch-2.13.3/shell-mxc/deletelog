@@ -1,0 +1,5 @@
+cd /usr/local/var/log/openvswitch
+rm -rf ovs-vswitchd.log
+touch ovs-vswitchd.log
+
+ovs-ctl restart

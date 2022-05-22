@@ -8696,7 +8696,7 @@ handle_openflow(struct ofconn *ofconn, const struct ovs_list *msgs)
     struct ofpbuf *msg = ofpbuf_from_list(ovs_list_front(msgs));
     enum ofptype type;
     enum ofperr error = ofptype_decode(&type, msg->data);/* 获得数据包的类型 */
-    VLOG_INFO("----mxc---packet---");
+    VLOG_INFO("----mxc---packet--成功测试521：16.56-");
     if (!error) {
         if (type == OFPTYPE_TABLE_FEATURES_STATS_REQUEST) {
             handle_table_features_request(ofconn, msgs);

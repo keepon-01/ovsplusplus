@@ -1,0 +1,2 @@
+cd /usr/local/var/log/openvswitch
+cat /usr/local/var/log/openvswitch/ovs-vswitchd.log | grep mxc

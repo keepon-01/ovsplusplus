@@ -554,16 +554,16 @@ enum idltest_simple_column_id {
     IDLTEST_SIMPLE_N_COLUMNS
 };
 
-#define idltest_simple_col_ba (idltest_simple_columns[IDLTEST_SIMPLE_COL_BA])
 #define idltest_simple_col_ra (idltest_simple_columns[IDLTEST_SIMPLE_COL_RA])
-#define idltest_simple_col_i (idltest_simple_columns[IDLTEST_SIMPLE_COL_I])
-#define idltest_simple_col_r (idltest_simple_columns[IDLTEST_SIMPLE_COL_R])
-#define idltest_simple_col_b (idltest_simple_columns[IDLTEST_SIMPLE_COL_B])
-#define idltest_simple_col_sa (idltest_simple_columns[IDLTEST_SIMPLE_COL_SA])
-#define idltest_simple_col_ia (idltest_simple_columns[IDLTEST_SIMPLE_COL_IA])
-#define idltest_simple_col_s (idltest_simple_columns[IDLTEST_SIMPLE_COL_S])
 #define idltest_simple_col_ua (idltest_simple_columns[IDLTEST_SIMPLE_COL_UA])
+#define idltest_simple_col_s (idltest_simple_columns[IDLTEST_SIMPLE_COL_S])
+#define idltest_simple_col_r (idltest_simple_columns[IDLTEST_SIMPLE_COL_R])
+#define idltest_simple_col_i (idltest_simple_columns[IDLTEST_SIMPLE_COL_I])
+#define idltest_simple_col_ia (idltest_simple_columns[IDLTEST_SIMPLE_COL_IA])
+#define idltest_simple_col_ba (idltest_simple_columns[IDLTEST_SIMPLE_COL_BA])
 #define idltest_simple_col_u (idltest_simple_columns[IDLTEST_SIMPLE_COL_U])
+#define idltest_simple_col_sa (idltest_simple_columns[IDLTEST_SIMPLE_COL_SA])
+#define idltest_simple_col_b (idltest_simple_columns[IDLTEST_SIMPLE_COL_B])
 
 extern struct ovsdb_idl_column idltest_simple_columns[IDLTEST_SIMPLE_N_COLUMNS];
 
@@ -789,8 +789,8 @@ enum idltest_simple2_column_id {
     IDLTEST_SIMPLE2_N_COLUMNS
 };
 
-#define idltest_simple2_col_name (idltest_simple2_columns[IDLTEST_SIMPLE2_COL_NAME])
 #define idltest_simple2_col_imap (idltest_simple2_columns[IDLTEST_SIMPLE2_COL_IMAP])
+#define idltest_simple2_col_name (idltest_simple2_columns[IDLTEST_SIMPLE2_COL_NAME])
 #define idltest_simple2_col_smap (idltest_simple2_columns[IDLTEST_SIMPLE2_COL_SMAP])
 
 extern struct ovsdb_idl_column idltest_simple2_columns[IDLTEST_SIMPLE2_N_COLUMNS];
@@ -962,9 +962,9 @@ enum idltest_simple3_column_id {
     IDLTEST_SIMPLE3_N_COLUMNS
 };
 
+#define idltest_simple3_col_name (idltest_simple3_columns[IDLTEST_SIMPLE3_COL_NAME])
 #define idltest_simple3_col_uset (idltest_simple3_columns[IDLTEST_SIMPLE3_COL_USET])
 #define idltest_simple3_col_uref (idltest_simple3_columns[IDLTEST_SIMPLE3_COL_UREF])
-#define idltest_simple3_col_name (idltest_simple3_columns[IDLTEST_SIMPLE3_COL_NAME])
 
 extern struct ovsdb_idl_column idltest_simple3_columns[IDLTEST_SIMPLE3_N_COLUMNS];
 
@@ -1274,8 +1274,8 @@ enum idltest_simple5_column_id {
     IDLTEST_SIMPLE5_N_COLUMNS
 };
 
-#define idltest_simple5_col_irefmap (idltest_simple5_columns[IDLTEST_SIMPLE5_COL_IREFMAP])
 #define idltest_simple5_col_name (idltest_simple5_columns[IDLTEST_SIMPLE5_COL_NAME])
+#define idltest_simple5_col_irefmap (idltest_simple5_columns[IDLTEST_SIMPLE5_COL_IREFMAP])
 
 extern struct ovsdb_idl_column idltest_simple5_columns[IDLTEST_SIMPLE5_N_COLUMNS];
 
@@ -1432,8 +1432,8 @@ enum idltest_simple6_column_id {
     IDLTEST_SIMPLE6_N_COLUMNS
 };
 
-#define idltest_simple6_col_weak_ref (idltest_simple6_columns[IDLTEST_SIMPLE6_COL_WEAK_REF])
 #define idltest_simple6_col_name (idltest_simple6_columns[IDLTEST_SIMPLE6_COL_NAME])
+#define idltest_simple6_col_weak_ref (idltest_simple6_columns[IDLTEST_SIMPLE6_COL_WEAK_REF])
 
 extern struct ovsdb_idl_column idltest_simple6_columns[IDLTEST_SIMPLE6_N_COLUMNS];
 
@@ -1729,16 +1729,16 @@ enum idltest_table_id {
     IDLTEST_N_TABLES
 };
 
+#define idltest_table_indexed (idltest_table_classes[IDLTEST_TABLE_INDEXED])
+#define idltest_table_simple (idltest_table_classes[IDLTEST_TABLE_SIMPLE])
 #define idltest_table_simple6 (idltest_table_classes[IDLTEST_TABLE_SIMPLE6])
 #define idltest_table_singleton (idltest_table_classes[IDLTEST_TABLE_SINGLETON])
-#define idltest_table_simple2 (idltest_table_classes[IDLTEST_TABLE_SIMPLE2])
-#define idltest_table_link2 (idltest_table_classes[IDLTEST_TABLE_LINK2])
-#define idltest_table_simple (idltest_table_classes[IDLTEST_TABLE_SIMPLE])
-#define idltest_table_link1 (idltest_table_classes[IDLTEST_TABLE_LINK1])
-#define idltest_table_simple5 (idltest_table_classes[IDLTEST_TABLE_SIMPLE5])
-#define idltest_table_indexed (idltest_table_classes[IDLTEST_TABLE_INDEXED])
-#define idltest_table_simple3 (idltest_table_classes[IDLTEST_TABLE_SIMPLE3])
 #define idltest_table_simple4 (idltest_table_classes[IDLTEST_TABLE_SIMPLE4])
+#define idltest_table_simple2 (idltest_table_classes[IDLTEST_TABLE_SIMPLE2])
+#define idltest_table_simple5 (idltest_table_classes[IDLTEST_TABLE_SIMPLE5])
+#define idltest_table_link2 (idltest_table_classes[IDLTEST_TABLE_LINK2])
+#define idltest_table_simple3 (idltest_table_classes[IDLTEST_TABLE_SIMPLE3])
+#define idltest_table_link1 (idltest_table_classes[IDLTEST_TABLE_LINK1])
 
 extern struct ovsdb_idl_table_class idltest_table_classes[IDLTEST_N_TABLES];
 
