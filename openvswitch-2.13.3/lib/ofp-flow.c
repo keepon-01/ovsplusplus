@@ -143,7 +143,12 @@ ofputil_flow_mod_flags_format(struct ds *s, enum ofputil_flow_mod_flags flags)
  * On success, the caller must eventually destroy fm->match.
  *
  * Does not validate the flow_mod actions.  The caller should do that, with
- * ofpacts_check(). */
+ * ofpacts_check(). 
+ * 
+ * OpenvSwitch支持两种flow格式，一种标准flow_mod，一种NXT flow_mod.
+ * 对于OpenvSwitch来说无论是哪种flow_mod，经过ovs抽象之后都会转成
+ * struct ofputil_flow_mod进行存储
+ * */
 enum ofperr
 ofputil_decode_flow_mod(struct ofputil_flow_mod *fm,
                         const struct ofp_header *oh,
@@ -156,21 +161,24 @@ ofputil_decode_flow_mod(struct ofputil_flow_mod *fm,
     ovs_be16 raw_flags;
     enum ofperr error;
     struct match match;
-    struct ofpbuf b = ofpbuf_const_initializer(oh, ntohs(oh->length));
-    enum ofpraw raw = ofpraw_pull_assert(&b);
+    struct ofpbuf b = ofpbuf_const_initializer(oh, ntohs(oh->length));  /* 将flow mod消息挂载在ofpbuf的b中 */
+    enum ofpraw raw = ofpraw_pull_assert(&b);     /* 版本兼容的东西 */
     if (raw == OFPRAW_OFPT11_FLOW_MOD) {
         /* Standard OpenFlow 1.1+ flow_mod. */
-        const struct ofp11_flow_mod *ofm;
+        const struct ofp11_flow_mod *ofm;   /* openflow固定头部字段 */
 
-        ofm = ofpbuf_pull(&b, sizeof *ofm);
+        ofm = ofpbuf_pull(&b, sizeof *ofm); /* 从b中移出大小为sizeof(*ofm) */
 
+        /* 获取flow_mod中的match数据赋值到fm->match中
+         * 如果存在多个oxm的话，也会同时解析出来的，而且所有的
+         * oxm做为一个flow流结构 */
         error = ofputil_pull_ofp11_match(&b, tun_table, vl_mff_map, &match,
                                          NULL);
         if (error) {
             return error;
         }
 
-        /* Translate the message. */
+        /* Translate the message.  flow mod类型的openflow固定头部字段解析，纯粹赋值 */
         fm->priority = ntohs(ofm->priority);
         if (ofm->command == OFPFC_ADD
             || (oh->version == OFP11_VERSION
@@ -315,6 +323,7 @@ ofputil_decode_flow_mod(struct ofputil_flow_mod *fm,
     }
 
     fm->ofpacts_tlv_bitmap = 0;
+    /* 解析instruction数据主要是解析action，将报文中action保存在ofpacts中 */
     error = ofpacts_pull_openflow_instructions(&b, b.size, oh->version,
                                                vl_mff_map,
                                                &fm->ofpacts_tlv_bitmap,
@@ -322,9 +331,11 @@ ofputil_decode_flow_mod(struct ofputil_flow_mod *fm,
     if (error) {
         return error;
     }
+    /* 保存action，因为fm是抽象层的flow_mod，在最后生成流表项的时候需要这个 */
     fm->ofpacts = ofpacts->data;
-    fm->ofpacts_len = ofpacts->size;
-
+    fm->ofpacts_len = ofpacts->size; 
+    
+    /* 解析flags字段的内容 */
     error = ofputil_decode_flow_mod_flags(raw_flags, fm->command,
                                           oh->version, &fm->flags);
     if (error) {
@@ -350,7 +361,7 @@ ofputil_decode_flow_mod(struct ofputil_flow_mod *fm,
         .n_tables = max_table
     };
     error = ofpacts_check_consistency(fm->ofpacts, fm->ofpacts_len,
-                                      protocol, &cp);
+                                      protocol, &cp);                   /* 校验action */
     if (!error) {
         minimatch_init(&fm->match, &match);
     }

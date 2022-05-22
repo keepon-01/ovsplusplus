@@ -3529,7 +3529,10 @@ reject_slave_controller(struct ofconn *ofconn)
  *
  * Returns 0 if successful, otherwise an OpenFlow error.  Caller must hold
  * 'ofproto_mutex' for the result to be valid also after this function
- * returns. */
+ * returns. 
+ * 
+ * 这个函数的功能是校验action内容的
+ * */
 enum ofperr
 ofproto_check_ofpacts(struct ofproto *ofproto,
                       const struct ofpact ofpacts[], size_t ofpacts_len)
@@ -5107,12 +5110,14 @@ add_flow_init(struct ofproto *ofproto, struct ofproto_flow_mod *ofm,
             table_id = 0;
         }
     } else if (fm->table_id < ofproto->n_tables) {
-        table_id = fm->table_id;
+        table_id = fm->table_id;            /* 设置table_id, 用于保存rule */
     } else {
         return OFPERR_OFPBRC_BAD_TABLE_ID;
     }
 
+    /* 选择table对象 */
     table = &ofproto->tables[table_id];
+    /* 检验是否有权限，例如只读 */
     if (table->flags & OFTABLE_READONLY
         && !(fm->flags & OFPUTIL_FF_NO_READONLY)) {/* 流表只读 */
         return OFPERR_OFPBRC_EPERM;
@@ -5277,6 +5282,9 @@ ofproto_rule_create(struct ofproto *ofproto, struct cls_rule *cr,
         VLOG_WARN_RL(&rl, "%s: failed to allocate a rule.", ofproto->name);
         return OFPERR_OFPFMFC_UNKNOWN;
     }
+
+    /* 很好奇的是这个地方为啥没有之前版本的evict_rules_from_table， ？？？？ 而现在这个方法好像在重新配置交换机时候
+    才会用到，在我们主动安装流表的时候好像没有用到 */
 
     /* Initialize base state. */
     *CONST_CAST(struct ofproto **, &rule->ofproto) = ofproto;/* 记录下哪台交换机 */
@@ -6205,7 +6213,7 @@ handle_flow_mod(struct ofconn *ofconn, const struct ofp_header *oh)
                                     &ofproto->vl_mff_map, &ofpacts,
                                     u16_to_ofp(ofproto->max_ports),
                                     ofproto->n_tables);
-    if (!error) {
+    if (!error) {/* 如果上面成功的话 */
         struct openflow_mod_requester req = { ofconn, oh };
         error = handle_flow_mod__(ofproto, &fm, &req);
         minimatch_destroy(&fm.match);
@@ -8004,7 +8012,7 @@ ofproto_flow_mod_init(struct ofproto *ofproto, struct ofproto_flow_mod *ofm,
     switch (ofm->command) {
     case OFPFC_ADD:
         check_buffer_id = true;
-        error = add_flow_init(ofproto, ofm, fm);              /* 周周转转跳转到这里来了 */
+        error = add_flow_init(ofproto, ofm, fm);              /* 周周转转跳转到这里来了,将上面解析出来的match,instruction保存到ofproto的flow中 */
         break;
     case OFPFC_MODIFY:
         check_buffer_id = true;
