@@ -76,6 +76,9 @@ COVERAGE_DEFINE(ofproto_recv_openflow);
 COVERAGE_DEFINE(ofproto_reinit_ports);
 COVERAGE_DEFINE(ofproto_update_port);
 
+/*mxc:for count flow mod */
+static int count_flow_mod = 0;
+
 /* Default fields to use for prefix tries in each flow table, unless something
  * else is configured. */
 const enum mf_field_id default_prefix_fields[2] =
@@ -5283,8 +5286,11 @@ ofproto_rule_create(struct ofproto *ofproto, struct cls_rule *cr,
         return OFPERR_OFPFMFC_UNKNOWN;
     }
 
-    /* 很好奇的是这个地方为啥没有之前版本的evict_rules_from_table， ？？？？ 而现在这个方法好像在重新配置交换机时候
-    才会用到，在我们主动安装流表的时候好像没有用到 */
+    /* 很好奇的是这个地方为啥没有之前版本的evict_rules_from_table， ？？？？
+     而现在这个方法好像在重新配置交换机时候
+    才会用到，在我们主动安装流表的时候好像没有用到 
+    现在这个方法里面的choose一个规则清楚是核心的方法，这个核心的方法在add_flow_start中
+    */
 
     /* Initialize base state. */
     *CONST_CAST(struct ofproto **, &rule->ofproto) = ofproto;/* 记录下哪台交换机 */
@@ -6194,7 +6200,7 @@ ofproto_rule_reduce_timeouts(struct rule *rule,
 static enum ofperr
 handle_flow_mod(struct ofconn *ofconn, const struct ofp_header *oh)
     OVS_EXCLUDED(ofproto_mutex)
-{
+{   pid_t pid_flow_mod = getpid();
     struct ofproto *ofproto = ofconn_get_ofproto(ofconn);
     struct ofputil_flow_mod fm;/* 流表项 */
     uint64_t ofpacts_stub[1024 / 8];
@@ -6214,6 +6220,8 @@ handle_flow_mod(struct ofconn *ofconn, const struct ofp_header *oh)
                                     u16_to_ofp(ofproto->max_ports),
                                     ofproto->n_tables);
     if (!error) {/* 如果上面成功的话 */
+        count_flow_mod++;
+        VLOG_INFO("mxc_count_flow_mod:%d,pid:%u", count_flow_mod, pid_flow_mod);
         struct openflow_mod_requester req = { ofconn, oh };
         error = handle_flow_mod__(ofproto, &fm, &req);
         minimatch_destroy(&fm.match);

@@ -60,14 +60,14 @@ enum serverrec_database_column_id {
     SERVERREC_DATABASE_N_COLUMNS
 };
 
-#define serverrec_database_col_name (serverrec_database_columns[SERVERREC_DATABASE_COL_NAME])
-#define serverrec_database_col_sid (serverrec_database_columns[SERVERREC_DATABASE_COL_SID])
 #define serverrec_database_col_leader (serverrec_database_columns[SERVERREC_DATABASE_COL_LEADER])
-#define serverrec_database_col_model (serverrec_database_columns[SERVERREC_DATABASE_COL_MODEL])
-#define serverrec_database_col_schema (serverrec_database_columns[SERVERREC_DATABASE_COL_SCHEMA])
-#define serverrec_database_col_cid (serverrec_database_columns[SERVERREC_DATABASE_COL_CID])
 #define serverrec_database_col_connected (serverrec_database_columns[SERVERREC_DATABASE_COL_CONNECTED])
+#define serverrec_database_col_schema (serverrec_database_columns[SERVERREC_DATABASE_COL_SCHEMA])
+#define serverrec_database_col_name (serverrec_database_columns[SERVERREC_DATABASE_COL_NAME])
 #define serverrec_database_col_index (serverrec_database_columns[SERVERREC_DATABASE_COL_INDEX])
+#define serverrec_database_col_sid (serverrec_database_columns[SERVERREC_DATABASE_COL_SID])
+#define serverrec_database_col_cid (serverrec_database_columns[SERVERREC_DATABASE_COL_CID])
+#define serverrec_database_col_model (serverrec_database_columns[SERVERREC_DATABASE_COL_MODEL])
 
 extern struct ovsdb_idl_column serverrec_database_columns[SERVERREC_DATABASE_N_COLUMNS];
 

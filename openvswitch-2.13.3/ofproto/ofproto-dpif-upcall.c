@@ -856,6 +856,7 @@ recv_upcalls(struct handler *handler)
         /* 开始处理，根据flow信息查找openflow流表 */
         error = process_upcall(udpif, upcall,                           /* 这个fuction里面生成packet in消息的功能 */
                                &upcall->odp_actions, &upcall->wc);
+        
         if (error) {
             goto cleanup;
         }
@@ -1153,7 +1154,7 @@ upcall_receive(struct upcall *upcall, const struct dpif_backer *backer,
 {
     int error;
 
-    upcall->type = classify_upcall(type, userdata, &upcall->cookie);
+    upcall->type = classify_upcall(type, userdata, &upcall->cookie); /* 获得上报类型的方法  */
     if (upcall->type == BAD_UPCALL) {
         return EAGAIN;
     } else if (upcall->type == MISS_UPCALL) {
@@ -1453,13 +1454,19 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
     const struct flow *flow = upcall->flow;
     size_t actions_len = 0;
 
+    // if(upcall->type == MISS_UPCALL) {
+    //     VLOG_INFO("mxc")
+    // }
     switch (upcall->type) {                                  
     case MISS_UPCALL:
+        VLOG_INFO("mxc:MISS_UPCALL");
     case SLOW_PATH_UPCALL:
+        VLOG_INFO("mxc:SLOW_PATH_UPCALL");
         upcall_xlate(udpif, upcall, odp_actions, wc);           /* 关键函数查找openflow流表 */
         return 0;
 
     case SFLOW_UPCALL:
+        VLOG_INFO("mxc:sflow_upcall");
         if (upcall->sflow) {
             struct dpif_sflow_actions sflow_actions;
 
@@ -1509,7 +1516,7 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
         break;
 
     case CONTROLLER_UPCALL:    /* 咱就是说这个地方是不是生成packet in消息的地方 skrskr */
-        {
+        {   VLOG_INFO("mxc:controller_upcall");
             struct user_action_cookie *cookie = &upcall->cookie;
 
             if (cookie->controller.dont_send) {

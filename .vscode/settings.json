@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "*.tcc": "c",
+        "exception": "c",
+        "iosfwd": "c",
+        "istream": "c",
+        "limits": "c",
+        "new": "c",
+        "ostream": "c",
+        "streambuf": "c",
+        "system_error": "c",
+        "type_traits": "c",
+        "typeinfo": "c"
+    }
+}
