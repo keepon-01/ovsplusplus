@@ -39,9 +39,9 @@ enum ovsrec_autoattach_column_id {
     OVSREC_AUTOATTACH_N_COLUMNS
 };
 
+#define ovsrec_autoattach_col_system_description (ovsrec_autoattach_columns[OVSREC_AUTOATTACH_COL_SYSTEM_DESCRIPTION])
 #define ovsrec_autoattach_col_mappings (ovsrec_autoattach_columns[OVSREC_AUTOATTACH_COL_MAPPINGS])
 #define ovsrec_autoattach_col_system_name (ovsrec_autoattach_columns[OVSREC_AUTOATTACH_COL_SYSTEM_NAME])
-#define ovsrec_autoattach_col_system_description (ovsrec_autoattach_columns[OVSREC_AUTOATTACH_COL_SYSTEM_DESCRIPTION])
 
 extern struct ovsdb_idl_column ovsrec_autoattach_columns[OVSREC_AUTOATTACH_N_COLUMNS];
 
@@ -291,28 +291,28 @@ enum ovsrec_bridge_column_id {
     OVSREC_BRIDGE_N_COLUMNS
 };
 
+#define ovsrec_bridge_col_ports (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_PORTS])
+#define ovsrec_bridge_col_mirrors (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_MIRRORS])
+#define ovsrec_bridge_col_flood_vlans (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_FLOOD_VLANS])
+#define ovsrec_bridge_col_datapath_type (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_DATAPATH_TYPE])
+#define ovsrec_bridge_col_ipfix (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_IPFIX])
+#define ovsrec_bridge_col_datapath_version (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_DATAPATH_VERSION])
+#define ovsrec_bridge_col_name (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_NAME])
+#define ovsrec_bridge_col_external_ids (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_EXTERNAL_IDS])
+#define ovsrec_bridge_col_stp_enable (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_STP_ENABLE])
+#define ovsrec_bridge_col_mcast_snooping_enable (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_MCAST_SNOOPING_ENABLE])
+#define ovsrec_bridge_col_controller (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_CONTROLLER])
+#define ovsrec_bridge_col_sflow (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_SFLOW])
+#define ovsrec_bridge_col_netflow (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_NETFLOW])
+#define ovsrec_bridge_col_auto_attach (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_AUTO_ATTACH])
+#define ovsrec_bridge_col_fail_mode (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_FAIL_MODE])
+#define ovsrec_bridge_col_protocols (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_PROTOCOLS])
+#define ovsrec_bridge_col_datapath_id (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_DATAPATH_ID])
 #define ovsrec_bridge_col_other_config (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_OTHER_CONFIG])
 #define ovsrec_bridge_col_rstp_status (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_RSTP_STATUS])
-#define ovsrec_bridge_col_datapath_version (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_DATAPATH_VERSION])
-#define ovsrec_bridge_col_flood_vlans (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_FLOOD_VLANS])
-#define ovsrec_bridge_col_mirrors (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_MIRRORS])
 #define ovsrec_bridge_col_status (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_STATUS])
-#define ovsrec_bridge_col_controller (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_CONTROLLER])
 #define ovsrec_bridge_col_rstp_enable (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_RSTP_ENABLE])
-#define ovsrec_bridge_col_fail_mode (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_FAIL_MODE])
-#define ovsrec_bridge_col_mcast_snooping_enable (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_MCAST_SNOOPING_ENABLE])
-#define ovsrec_bridge_col_sflow (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_SFLOW])
-#define ovsrec_bridge_col_external_ids (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_EXTERNAL_IDS])
-#define ovsrec_bridge_col_ipfix (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_IPFIX])
 #define ovsrec_bridge_col_flow_tables (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_FLOW_TABLES])
-#define ovsrec_bridge_col_datapath_id (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_DATAPATH_ID])
-#define ovsrec_bridge_col_name (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_NAME])
-#define ovsrec_bridge_col_auto_attach (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_AUTO_ATTACH])
-#define ovsrec_bridge_col_protocols (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_PROTOCOLS])
-#define ovsrec_bridge_col_stp_enable (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_STP_ENABLE])
-#define ovsrec_bridge_col_datapath_type (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_DATAPATH_TYPE])
-#define ovsrec_bridge_col_ports (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_PORTS])
-#define ovsrec_bridge_col_netflow (ovsrec_bridge_columns[OVSREC_BRIDGE_COL_NETFLOW])
 
 extern struct ovsdb_idl_column ovsrec_bridge_columns[OVSREC_BRIDGE_N_COLUMNS];
 
@@ -640,8 +640,8 @@ enum ovsrec_ct_timeout_policy_column_id {
     OVSREC_CT_TIMEOUT_POLICY_N_COLUMNS
 };
 
-#define ovsrec_ct_timeout_policy_col_external_ids (ovsrec_ct_timeout_policy_columns[OVSREC_CT_TIMEOUT_POLICY_COL_EXTERNAL_IDS])
 #define ovsrec_ct_timeout_policy_col_timeouts (ovsrec_ct_timeout_policy_columns[OVSREC_CT_TIMEOUT_POLICY_COL_TIMEOUTS])
+#define ovsrec_ct_timeout_policy_col_external_ids (ovsrec_ct_timeout_policy_columns[OVSREC_CT_TIMEOUT_POLICY_COL_EXTERNAL_IDS])
 
 extern struct ovsdb_idl_column ovsrec_ct_timeout_policy_columns[OVSREC_CT_TIMEOUT_POLICY_N_COLUMNS];
 
@@ -1024,23 +1024,23 @@ enum ovsrec_controller_column_id {
     OVSREC_CONTROLLER_N_COLUMNS
 };
 
-#define ovsrec_controller_col_other_config (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_OTHER_CONFIG])
-#define ovsrec_controller_col_enable_async_messages (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_ENABLE_ASYNC_MESSAGES])
-#define ovsrec_controller_col_local_netmask (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_LOCAL_NETMASK])
-#define ovsrec_controller_col_controller_rate_limit (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_CONTROLLER_RATE_LIMIT])
-#define ovsrec_controller_col_role (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_ROLE])
-#define ovsrec_controller_col_type (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_TYPE])
-#define ovsrec_controller_col_controller_burst_limit (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_CONTROLLER_BURST_LIMIT])
-#define ovsrec_controller_col_local_ip (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_LOCAL_IP])
-#define ovsrec_controller_col_inactivity_probe (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_INACTIVITY_PROBE])
-#define ovsrec_controller_col_connection_mode (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_CONNECTION_MODE])
 #define ovsrec_controller_col_external_ids (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_EXTERNAL_IDS])
-#define ovsrec_controller_col_target (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_TARGET])
-#define ovsrec_controller_col_local_gateway (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_LOCAL_GATEWAY])
+#define ovsrec_controller_col_type (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_TYPE])
+#define ovsrec_controller_col_controller_rate_limit (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_CONTROLLER_RATE_LIMIT])
 #define ovsrec_controller_col_controller_queue_size (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_CONTROLLER_QUEUE_SIZE])
+#define ovsrec_controller_col_role (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_ROLE])
+#define ovsrec_controller_col_local_gateway (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_LOCAL_GATEWAY])
+#define ovsrec_controller_col_inactivity_probe (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_INACTIVITY_PROBE])
+#define ovsrec_controller_col_controller_burst_limit (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_CONTROLLER_BURST_LIMIT])
+#define ovsrec_controller_col_max_backoff (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_MAX_BACKOFF])
+#define ovsrec_controller_col_local_ip (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_LOCAL_IP])
+#define ovsrec_controller_col_other_config (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_OTHER_CONFIG])
+#define ovsrec_controller_col_target (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_TARGET])
 #define ovsrec_controller_col_is_connected (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_IS_CONNECTED])
 #define ovsrec_controller_col_status (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_STATUS])
-#define ovsrec_controller_col_max_backoff (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_MAX_BACKOFF])
+#define ovsrec_controller_col_enable_async_messages (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_ENABLE_ASYNC_MESSAGES])
+#define ovsrec_controller_col_local_netmask (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_LOCAL_NETMASK])
+#define ovsrec_controller_col_connection_mode (ovsrec_controller_columns[OVSREC_CONTROLLER_COL_CONNECTION_MODE])
 
 extern struct ovsdb_idl_column ovsrec_controller_columns[OVSREC_CONTROLLER_N_COLUMNS];
 
@@ -1341,8 +1341,8 @@ enum ovsrec_datapath_column_id {
 
 #define ovsrec_datapath_col_capabilities (ovsrec_datapath_columns[OVSREC_DATAPATH_COL_CAPABILITIES])
 #define ovsrec_datapath_col_external_ids (ovsrec_datapath_columns[OVSREC_DATAPATH_COL_EXTERNAL_IDS])
-#define ovsrec_datapath_col_ct_zones (ovsrec_datapath_columns[OVSREC_DATAPATH_COL_CT_ZONES])
 #define ovsrec_datapath_col_datapath_version (ovsrec_datapath_columns[OVSREC_DATAPATH_COL_DATAPATH_VERSION])
+#define ovsrec_datapath_col_ct_zones (ovsrec_datapath_columns[OVSREC_DATAPATH_COL_CT_ZONES])
 
 extern struct ovsdb_idl_column ovsrec_datapath_columns[OVSREC_DATAPATH_N_COLUMNS];
 
@@ -1525,9 +1525,9 @@ enum ovsrec_flow_sample_collector_set_column_id {
 };
 
 #define ovsrec_flow_sample_collector_set_col_bridge (ovsrec_flow_sample_collector_set_columns[OVSREC_FLOW_SAMPLE_COLLECTOR_SET_COL_BRIDGE])
-#define ovsrec_flow_sample_collector_set_col_external_ids (ovsrec_flow_sample_collector_set_columns[OVSREC_FLOW_SAMPLE_COLLECTOR_SET_COL_EXTERNAL_IDS])
-#define ovsrec_flow_sample_collector_set_col_ipfix (ovsrec_flow_sample_collector_set_columns[OVSREC_FLOW_SAMPLE_COLLECTOR_SET_COL_IPFIX])
 #define ovsrec_flow_sample_collector_set_col_id (ovsrec_flow_sample_collector_set_columns[OVSREC_FLOW_SAMPLE_COLLECTOR_SET_COL_ID])
+#define ovsrec_flow_sample_collector_set_col_ipfix (ovsrec_flow_sample_collector_set_columns[OVSREC_FLOW_SAMPLE_COLLECTOR_SET_COL_IPFIX])
+#define ovsrec_flow_sample_collector_set_col_external_ids (ovsrec_flow_sample_collector_set_columns[OVSREC_FLOW_SAMPLE_COLLECTOR_SET_COL_EXTERNAL_IDS])
 
 extern struct ovsdb_idl_column ovsrec_flow_sample_collector_set_columns[OVSREC_FLOW_SAMPLE_COLLECTOR_SET_N_COLUMNS];
 
@@ -1718,12 +1718,12 @@ enum ovsrec_flow_table_column_id {
     OVSREC_FLOW_TABLE_N_COLUMNS
 };
 
-#define ovsrec_flow_table_col_external_ids (ovsrec_flow_table_columns[OVSREC_FLOW_TABLE_COL_EXTERNAL_IDS])
-#define ovsrec_flow_table_col_flow_limit (ovsrec_flow_table_columns[OVSREC_FLOW_TABLE_COL_FLOW_LIMIT])
-#define ovsrec_flow_table_col_prefixes (ovsrec_flow_table_columns[OVSREC_FLOW_TABLE_COL_PREFIXES])
 #define ovsrec_flow_table_col_groups (ovsrec_flow_table_columns[OVSREC_FLOW_TABLE_COL_GROUPS])
-#define ovsrec_flow_table_col_overflow_policy (ovsrec_flow_table_columns[OVSREC_FLOW_TABLE_COL_OVERFLOW_POLICY])
+#define ovsrec_flow_table_col_flow_limit (ovsrec_flow_table_columns[OVSREC_FLOW_TABLE_COL_FLOW_LIMIT])
+#define ovsrec_flow_table_col_external_ids (ovsrec_flow_table_columns[OVSREC_FLOW_TABLE_COL_EXTERNAL_IDS])
+#define ovsrec_flow_table_col_prefixes (ovsrec_flow_table_columns[OVSREC_FLOW_TABLE_COL_PREFIXES])
 #define ovsrec_flow_table_col_name (ovsrec_flow_table_columns[OVSREC_FLOW_TABLE_COL_NAME])
+#define ovsrec_flow_table_col_overflow_policy (ovsrec_flow_table_columns[OVSREC_FLOW_TABLE_COL_OVERFLOW_POLICY])
 
 extern struct ovsdb_idl_column ovsrec_flow_table_columns[OVSREC_FLOW_TABLE_N_COLUMNS];
 
@@ -1947,14 +1947,14 @@ enum ovsrec_ipfix_column_id {
     OVSREC_IPFIX_N_COLUMNS
 };
 
-#define ovsrec_ipfix_col_other_config (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_OTHER_CONFIG])
-#define ovsrec_ipfix_col_external_ids (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_EXTERNAL_IDS])
-#define ovsrec_ipfix_col_sampling (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_SAMPLING])
 #define ovsrec_ipfix_col_targets (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_TARGETS])
-#define ovsrec_ipfix_col_obs_point_id (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_OBS_POINT_ID])
-#define ovsrec_ipfix_col_cache_max_flows (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_CACHE_MAX_FLOWS])
-#define ovsrec_ipfix_col_cache_active_timeout (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_CACHE_ACTIVE_TIMEOUT])
+#define ovsrec_ipfix_col_external_ids (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_EXTERNAL_IDS])
 #define ovsrec_ipfix_col_obs_domain_id (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_OBS_DOMAIN_ID])
+#define ovsrec_ipfix_col_obs_point_id (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_OBS_POINT_ID])
+#define ovsrec_ipfix_col_cache_active_timeout (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_CACHE_ACTIVE_TIMEOUT])
+#define ovsrec_ipfix_col_sampling (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_SAMPLING])
+#define ovsrec_ipfix_col_cache_max_flows (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_CACHE_MAX_FLOWS])
+#define ovsrec_ipfix_col_other_config (ovsrec_ipfix_columns[OVSREC_IPFIX_COL_OTHER_CONFIG])
 
 extern struct ovsdb_idl_column ovsrec_ipfix_columns[OVSREC_IPFIX_N_COLUMNS];
 
@@ -2306,39 +2306,39 @@ enum ovsrec_interface_column_id {
     OVSREC_INTERFACE_N_COLUMNS
 };
 
-#define ovsrec_interface_col_other_config (ovsrec_interface_columns[OVSREC_INTERFACE_COL_OTHER_CONFIG])
-#define ovsrec_interface_col_lldp (ovsrec_interface_columns[OVSREC_INTERFACE_COL_LLDP])
-#define ovsrec_interface_col_link_state (ovsrec_interface_columns[OVSREC_INTERFACE_COL_LINK_STATE])
-#define ovsrec_interface_col_cfm_remote_opstate (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_REMOTE_OPSTATE])
-#define ovsrec_interface_col_cfm_mpid (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_MPID])
-#define ovsrec_interface_col_options (ovsrec_interface_columns[OVSREC_INTERFACE_COL_OPTIONS])
-#define ovsrec_interface_col_cfm_health (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_HEALTH])
-#define ovsrec_interface_col_status (ovsrec_interface_columns[OVSREC_INTERFACE_COL_STATUS])
-#define ovsrec_interface_col_cfm_flap_count (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_FLAP_COUNT])
-#define ovsrec_interface_col_external_ids (ovsrec_interface_columns[OVSREC_INTERFACE_COL_EXTERNAL_IDS])
-#define ovsrec_interface_col_mac_in_use (ovsrec_interface_columns[OVSREC_INTERFACE_COL_MAC_IN_USE])
-#define ovsrec_interface_col_error (ovsrec_interface_columns[OVSREC_INTERFACE_COL_ERROR])
-#define ovsrec_interface_col_duplex (ovsrec_interface_columns[OVSREC_INTERFACE_COL_DUPLEX])
-#define ovsrec_interface_col_bfd_status (ovsrec_interface_columns[OVSREC_INTERFACE_COL_BFD_STATUS])
-#define ovsrec_interface_col_statistics (ovsrec_interface_columns[OVSREC_INTERFACE_COL_STATISTICS])
-#define ovsrec_interface_col_admin_state (ovsrec_interface_columns[OVSREC_INTERFACE_COL_ADMIN_STATE])
-#define ovsrec_interface_col_ifindex (ovsrec_interface_columns[OVSREC_INTERFACE_COL_IFINDEX])
-#define ovsrec_interface_col_ingress_policing_rate (ovsrec_interface_columns[OVSREC_INTERFACE_COL_INGRESS_POLICING_RATE])
-#define ovsrec_interface_col_cfm_fault (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_FAULT])
-#define ovsrec_interface_col_cfm_remote_mpids (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_REMOTE_MPIDS])
-#define ovsrec_interface_col_ingress_policing_burst (ovsrec_interface_columns[OVSREC_INTERFACE_COL_INGRESS_POLICING_BURST])
-#define ovsrec_interface_col_name (ovsrec_interface_columns[OVSREC_INTERFACE_COL_NAME])
-#define ovsrec_interface_col_link_resets (ovsrec_interface_columns[OVSREC_INTERFACE_COL_LINK_RESETS])
-#define ovsrec_interface_col_cfm_fault_status (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_FAULT_STATUS])
-#define ovsrec_interface_col_ofport_request (ovsrec_interface_columns[OVSREC_INTERFACE_COL_OFPORT_REQUEST])
 #define ovsrec_interface_col_bfd (ovsrec_interface_columns[OVSREC_INTERFACE_COL_BFD])
-#define ovsrec_interface_col_lacp_current (ovsrec_interface_columns[OVSREC_INTERFACE_COL_LACP_CURRENT])
-#define ovsrec_interface_col_mtu (ovsrec_interface_columns[OVSREC_INTERFACE_COL_MTU])
-#define ovsrec_interface_col_type (ovsrec_interface_columns[OVSREC_INTERFACE_COL_TYPE])
-#define ovsrec_interface_col_ofport (ovsrec_interface_columns[OVSREC_INTERFACE_COL_OFPORT])
-#define ovsrec_interface_col_link_speed (ovsrec_interface_columns[OVSREC_INTERFACE_COL_LINK_SPEED])
-#define ovsrec_interface_col_mtu_request (ovsrec_interface_columns[OVSREC_INTERFACE_COL_MTU_REQUEST])
+#define ovsrec_interface_col_cfm_fault (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_FAULT])
+#define ovsrec_interface_col_cfm_remote_opstate (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_REMOTE_OPSTATE])
+#define ovsrec_interface_col_cfm_remote_mpids (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_REMOTE_MPIDS])
 #define ovsrec_interface_col_mac (ovsrec_interface_columns[OVSREC_INTERFACE_COL_MAC])
+#define ovsrec_interface_col_cfm_fault_status (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_FAULT_STATUS])
+#define ovsrec_interface_col_admin_state (ovsrec_interface_columns[OVSREC_INTERFACE_COL_ADMIN_STATE])
+#define ovsrec_interface_col_lacp_current (ovsrec_interface_columns[OVSREC_INTERFACE_COL_LACP_CURRENT])
+#define ovsrec_interface_col_ingress_policing_rate (ovsrec_interface_columns[OVSREC_INTERFACE_COL_INGRESS_POLICING_RATE])
+#define ovsrec_interface_col_link_speed (ovsrec_interface_columns[OVSREC_INTERFACE_COL_LINK_SPEED])
+#define ovsrec_interface_col_cfm_flap_count (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_FLAP_COUNT])
+#define ovsrec_interface_col_ofport_request (ovsrec_interface_columns[OVSREC_INTERFACE_COL_OFPORT_REQUEST])
+#define ovsrec_interface_col_bfd_status (ovsrec_interface_columns[OVSREC_INTERFACE_COL_BFD_STATUS])
+#define ovsrec_interface_col_ingress_policing_burst (ovsrec_interface_columns[OVSREC_INTERFACE_COL_INGRESS_POLICING_BURST])
+#define ovsrec_interface_col_mac_in_use (ovsrec_interface_columns[OVSREC_INTERFACE_COL_MAC_IN_USE])
+#define ovsrec_interface_col_name (ovsrec_interface_columns[OVSREC_INTERFACE_COL_NAME])
+#define ovsrec_interface_col_duplex (ovsrec_interface_columns[OVSREC_INTERFACE_COL_DUPLEX])
+#define ovsrec_interface_col_ifindex (ovsrec_interface_columns[OVSREC_INTERFACE_COL_IFINDEX])
+#define ovsrec_interface_col_external_ids (ovsrec_interface_columns[OVSREC_INTERFACE_COL_EXTERNAL_IDS])
+#define ovsrec_interface_col_mtu_request (ovsrec_interface_columns[OVSREC_INTERFACE_COL_MTU_REQUEST])
+#define ovsrec_interface_col_ofport (ovsrec_interface_columns[OVSREC_INTERFACE_COL_OFPORT])
+#define ovsrec_interface_col_type (ovsrec_interface_columns[OVSREC_INTERFACE_COL_TYPE])
+#define ovsrec_interface_col_statistics (ovsrec_interface_columns[OVSREC_INTERFACE_COL_STATISTICS])
+#define ovsrec_interface_col_error (ovsrec_interface_columns[OVSREC_INTERFACE_COL_ERROR])
+#define ovsrec_interface_col_link_resets (ovsrec_interface_columns[OVSREC_INTERFACE_COL_LINK_RESETS])
+#define ovsrec_interface_col_cfm_health (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_HEALTH])
+#define ovsrec_interface_col_options (ovsrec_interface_columns[OVSREC_INTERFACE_COL_OPTIONS])
+#define ovsrec_interface_col_other_config (ovsrec_interface_columns[OVSREC_INTERFACE_COL_OTHER_CONFIG])
+#define ovsrec_interface_col_mtu (ovsrec_interface_columns[OVSREC_INTERFACE_COL_MTU])
+#define ovsrec_interface_col_lldp (ovsrec_interface_columns[OVSREC_INTERFACE_COL_LLDP])
+#define ovsrec_interface_col_status (ovsrec_interface_columns[OVSREC_INTERFACE_COL_STATUS])
+#define ovsrec_interface_col_link_state (ovsrec_interface_columns[OVSREC_INTERFACE_COL_LINK_STATE])
+#define ovsrec_interface_col_cfm_mpid (ovsrec_interface_columns[OVSREC_INTERFACE_COL_CFM_MPID])
 
 extern struct ovsdb_idl_column ovsrec_interface_columns[OVSREC_INTERFACE_N_COLUMNS];
 
@@ -2793,14 +2793,14 @@ enum ovsrec_manager_column_id {
     OVSREC_MANAGER_N_COLUMNS
 };
 
-#define ovsrec_manager_col_other_config (ovsrec_manager_columns[OVSREC_MANAGER_COL_OTHER_CONFIG])
+#define ovsrec_manager_col_max_backoff (ovsrec_manager_columns[OVSREC_MANAGER_COL_MAX_BACKOFF])
 #define ovsrec_manager_col_external_ids (ovsrec_manager_columns[OVSREC_MANAGER_COL_EXTERNAL_IDS])
 #define ovsrec_manager_col_target (ovsrec_manager_columns[OVSREC_MANAGER_COL_TARGET])
-#define ovsrec_manager_col_max_backoff (ovsrec_manager_columns[OVSREC_MANAGER_COL_MAX_BACKOFF])
 #define ovsrec_manager_col_inactivity_probe (ovsrec_manager_columns[OVSREC_MANAGER_COL_INACTIVITY_PROBE])
 #define ovsrec_manager_col_is_connected (ovsrec_manager_columns[OVSREC_MANAGER_COL_IS_CONNECTED])
 #define ovsrec_manager_col_status (ovsrec_manager_columns[OVSREC_MANAGER_COL_STATUS])
 #define ovsrec_manager_col_connection_mode (ovsrec_manager_columns[OVSREC_MANAGER_COL_CONNECTION_MODE])
+#define ovsrec_manager_col_other_config (ovsrec_manager_columns[OVSREC_MANAGER_COL_OTHER_CONFIG])
 
 extern struct ovsdb_idl_column ovsrec_manager_columns[OVSREC_MANAGER_N_COLUMNS];
 
@@ -3047,16 +3047,16 @@ enum ovsrec_mirror_column_id {
     OVSREC_MIRROR_N_COLUMNS
 };
 
-#define ovsrec_mirror_col_select_src_port (ovsrec_mirror_columns[OVSREC_MIRROR_COL_SELECT_SRC_PORT])
-#define ovsrec_mirror_col_select_all (ovsrec_mirror_columns[OVSREC_MIRROR_COL_SELECT_ALL])
 #define ovsrec_mirror_col_external_ids (ovsrec_mirror_columns[OVSREC_MIRROR_COL_EXTERNAL_IDS])
-#define ovsrec_mirror_col_select_dst_port (ovsrec_mirror_columns[OVSREC_MIRROR_COL_SELECT_DST_PORT])
 #define ovsrec_mirror_col_output_vlan (ovsrec_mirror_columns[OVSREC_MIRROR_COL_OUTPUT_VLAN])
-#define ovsrec_mirror_col_select_vlan (ovsrec_mirror_columns[OVSREC_MIRROR_COL_SELECT_VLAN])
 #define ovsrec_mirror_col_output_port (ovsrec_mirror_columns[OVSREC_MIRROR_COL_OUTPUT_PORT])
-#define ovsrec_mirror_col_statistics (ovsrec_mirror_columns[OVSREC_MIRROR_COL_STATISTICS])
 #define ovsrec_mirror_col_name (ovsrec_mirror_columns[OVSREC_MIRROR_COL_NAME])
+#define ovsrec_mirror_col_select_all (ovsrec_mirror_columns[OVSREC_MIRROR_COL_SELECT_ALL])
+#define ovsrec_mirror_col_select_dst_port (ovsrec_mirror_columns[OVSREC_MIRROR_COL_SELECT_DST_PORT])
 #define ovsrec_mirror_col_snaplen (ovsrec_mirror_columns[OVSREC_MIRROR_COL_SNAPLEN])
+#define ovsrec_mirror_col_select_src_port (ovsrec_mirror_columns[OVSREC_MIRROR_COL_SELECT_SRC_PORT])
+#define ovsrec_mirror_col_statistics (ovsrec_mirror_columns[OVSREC_MIRROR_COL_STATISTICS])
+#define ovsrec_mirror_col_select_vlan (ovsrec_mirror_columns[OVSREC_MIRROR_COL_SELECT_VLAN])
 
 extern struct ovsdb_idl_column ovsrec_mirror_columns[OVSREC_MIRROR_N_COLUMNS];
 
@@ -3301,12 +3301,12 @@ enum ovsrec_netflow_column_id {
     OVSREC_NETFLOW_N_COLUMNS
 };
 
-#define ovsrec_netflow_col_active_timeout (ovsrec_netflow_columns[OVSREC_NETFLOW_COL_ACTIVE_TIMEOUT])
-#define ovsrec_netflow_col_targets (ovsrec_netflow_columns[OVSREC_NETFLOW_COL_TARGETS])
-#define ovsrec_netflow_col_external_ids (ovsrec_netflow_columns[OVSREC_NETFLOW_COL_EXTERNAL_IDS])
-#define ovsrec_netflow_col_add_id_to_interface (ovsrec_netflow_columns[OVSREC_NETFLOW_COL_ADD_ID_TO_INTERFACE])
 #define ovsrec_netflow_col_engine_id (ovsrec_netflow_columns[OVSREC_NETFLOW_COL_ENGINE_ID])
+#define ovsrec_netflow_col_add_id_to_interface (ovsrec_netflow_columns[OVSREC_NETFLOW_COL_ADD_ID_TO_INTERFACE])
 #define ovsrec_netflow_col_engine_type (ovsrec_netflow_columns[OVSREC_NETFLOW_COL_ENGINE_TYPE])
+#define ovsrec_netflow_col_external_ids (ovsrec_netflow_columns[OVSREC_NETFLOW_COL_EXTERNAL_IDS])
+#define ovsrec_netflow_col_targets (ovsrec_netflow_columns[OVSREC_NETFLOW_COL_TARGETS])
+#define ovsrec_netflow_col_active_timeout (ovsrec_netflow_columns[OVSREC_NETFLOW_COL_ACTIVE_TIMEOUT])
 
 extern struct ovsdb_idl_column ovsrec_netflow_columns[OVSREC_NETFLOW_N_COLUMNS];
 
@@ -3562,23 +3562,23 @@ enum ovsrec_open_vswitch_column_id {
     OVSREC_OPEN_VSWITCH_N_COLUMNS
 };
 
-#define ovsrec_open_vswitch_col_other_config (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_OTHER_CONFIG])
 #define ovsrec_open_vswitch_col_db_version (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_DB_VERSION])
-#define ovsrec_open_vswitch_col_iface_types (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_IFACE_TYPES])
-#define ovsrec_open_vswitch_col_dpdk_initialized (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_DPDK_INITIALIZED])
-#define ovsrec_open_vswitch_col_ovs_version (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_OVS_VERSION])
-#define ovsrec_open_vswitch_col_system_type (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_SYSTEM_TYPE])
-#define ovsrec_open_vswitch_col_manager_options (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_MANAGER_OPTIONS])
-#define ovsrec_open_vswitch_col_ssl (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_SSL])
-#define ovsrec_open_vswitch_col_external_ids (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_EXTERNAL_IDS])
+#define ovsrec_open_vswitch_col_dpdk_version (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_DPDK_VERSION])
 #define ovsrec_open_vswitch_col_bridges (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_BRIDGES])
 #define ovsrec_open_vswitch_col_datapaths (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_DATAPATHS])
+#define ovsrec_open_vswitch_col_manager_options (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_MANAGER_OPTIONS])
+#define ovsrec_open_vswitch_col_iface_types (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_IFACE_TYPES])
 #define ovsrec_open_vswitch_col_datapath_types (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_DATAPATH_TYPES])
-#define ovsrec_open_vswitch_col_cur_cfg (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_CUR_CFG])
-#define ovsrec_open_vswitch_col_dpdk_version (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_DPDK_VERSION])
 #define ovsrec_open_vswitch_col_statistics (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_STATISTICS])
+#define ovsrec_open_vswitch_col_dpdk_initialized (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_DPDK_INITIALIZED])
+#define ovsrec_open_vswitch_col_cur_cfg (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_CUR_CFG])
 #define ovsrec_open_vswitch_col_next_cfg (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_NEXT_CFG])
 #define ovsrec_open_vswitch_col_system_version (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_SYSTEM_VERSION])
+#define ovsrec_open_vswitch_col_external_ids (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_EXTERNAL_IDS])
+#define ovsrec_open_vswitch_col_ssl (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_SSL])
+#define ovsrec_open_vswitch_col_ovs_version (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_OVS_VERSION])
+#define ovsrec_open_vswitch_col_system_type (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_SYSTEM_TYPE])
+#define ovsrec_open_vswitch_col_other_config (ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_COL_OTHER_CONFIG])
 
 extern struct ovsdb_idl_column ovsrec_open_vswitch_columns[OVSREC_OPEN_VSWITCH_N_COLUMNS];
 
@@ -3953,28 +3953,28 @@ enum ovsrec_port_column_id {
     OVSREC_PORT_N_COLUMNS
 };
 
-#define ovsrec_port_col_other_config (ovsrec_port_columns[OVSREC_PORT_COL_OTHER_CONFIG])
-#define ovsrec_port_col_rstp_status (ovsrec_port_columns[OVSREC_PORT_COL_RSTP_STATUS])
-#define ovsrec_port_col_vlan_mode (ovsrec_port_columns[OVSREC_PORT_COL_VLAN_MODE])
-#define ovsrec_port_col_bond_updelay (ovsrec_port_columns[OVSREC_PORT_COL_BOND_UPDELAY])
-#define ovsrec_port_col_status (ovsrec_port_columns[OVSREC_PORT_COL_STATUS])
-#define ovsrec_port_col_interfaces (ovsrec_port_columns[OVSREC_PORT_COL_INTERFACES])
-#define ovsrec_port_col_external_ids (ovsrec_port_columns[OVSREC_PORT_COL_EXTERNAL_IDS])
+#define ovsrec_port_col_bond_active_slave (ovsrec_port_columns[OVSREC_PORT_COL_BOND_ACTIVE_SLAVE])
 #define ovsrec_port_col_fake_bridge (ovsrec_port_columns[OVSREC_PORT_COL_FAKE_BRIDGE])
-#define ovsrec_port_col_rstp_statistics (ovsrec_port_columns[OVSREC_PORT_COL_RSTP_STATISTICS])
-#define ovsrec_port_col_statistics (ovsrec_port_columns[OVSREC_PORT_COL_STATISTICS])
+#define ovsrec_port_col_bond_downdelay (ovsrec_port_columns[OVSREC_PORT_COL_BOND_DOWNDELAY])
+#define ovsrec_port_col_interfaces (ovsrec_port_columns[OVSREC_PORT_COL_INTERFACES])
+#define ovsrec_port_col_trunks (ovsrec_port_columns[OVSREC_PORT_COL_TRUNKS])
+#define ovsrec_port_col_tag (ovsrec_port_columns[OVSREC_PORT_COL_TAG])
+#define ovsrec_port_col_cvlans (ovsrec_port_columns[OVSREC_PORT_COL_CVLANS])
 #define ovsrec_port_col_bond_mode (ovsrec_port_columns[OVSREC_PORT_COL_BOND_MODE])
+#define ovsrec_port_col_vlan_mode (ovsrec_port_columns[OVSREC_PORT_COL_VLAN_MODE])
 #define ovsrec_port_col_bond_fake_iface (ovsrec_port_columns[OVSREC_PORT_COL_BOND_FAKE_IFACE])
 #define ovsrec_port_col_protected_ (ovsrec_port_columns[OVSREC_PORT_COL_PROTECTED_])
-#define ovsrec_port_col_bond_active_slave (ovsrec_port_columns[OVSREC_PORT_COL_BOND_ACTIVE_SLAVE])
-#define ovsrec_port_col_trunks (ovsrec_port_columns[OVSREC_PORT_COL_TRUNKS])
 #define ovsrec_port_col_name (ovsrec_port_columns[OVSREC_PORT_COL_NAME])
-#define ovsrec_port_col_tag (ovsrec_port_columns[OVSREC_PORT_COL_TAG])
-#define ovsrec_port_col_bond_downdelay (ovsrec_port_columns[OVSREC_PORT_COL_BOND_DOWNDELAY])
+#define ovsrec_port_col_rstp_statistics (ovsrec_port_columns[OVSREC_PORT_COL_RSTP_STATISTICS])
+#define ovsrec_port_col_external_ids (ovsrec_port_columns[OVSREC_PORT_COL_EXTERNAL_IDS])
+#define ovsrec_port_col_mac (ovsrec_port_columns[OVSREC_PORT_COL_MAC])
+#define ovsrec_port_col_bond_updelay (ovsrec_port_columns[OVSREC_PORT_COL_BOND_UPDELAY])
+#define ovsrec_port_col_statistics (ovsrec_port_columns[OVSREC_PORT_COL_STATISTICS])
+#define ovsrec_port_col_other_config (ovsrec_port_columns[OVSREC_PORT_COL_OTHER_CONFIG])
+#define ovsrec_port_col_rstp_status (ovsrec_port_columns[OVSREC_PORT_COL_RSTP_STATUS])
+#define ovsrec_port_col_status (ovsrec_port_columns[OVSREC_PORT_COL_STATUS])
 #define ovsrec_port_col_qos (ovsrec_port_columns[OVSREC_PORT_COL_QOS])
 #define ovsrec_port_col_lacp (ovsrec_port_columns[OVSREC_PORT_COL_LACP])
-#define ovsrec_port_col_cvlans (ovsrec_port_columns[OVSREC_PORT_COL_CVLANS])
-#define ovsrec_port_col_mac (ovsrec_port_columns[OVSREC_PORT_COL_MAC])
 
 extern struct ovsdb_idl_column ovsrec_port_columns[OVSREC_PORT_N_COLUMNS];
 
@@ -4310,9 +4310,9 @@ enum ovsrec_qos_column_id {
     OVSREC_QOS_N_COLUMNS
 };
 
+#define ovsrec_qos_col_queues (ovsrec_qos_columns[OVSREC_QOS_COL_QUEUES])
 #define ovsrec_qos_col_other_config (ovsrec_qos_columns[OVSREC_QOS_COL_OTHER_CONFIG])
 #define ovsrec_qos_col_external_ids (ovsrec_qos_columns[OVSREC_QOS_COL_EXTERNAL_IDS])
-#define ovsrec_qos_col_queues (ovsrec_qos_columns[OVSREC_QOS_COL_QUEUES])
 #define ovsrec_qos_col_type (ovsrec_qos_columns[OVSREC_QOS_COL_TYPE])
 
 extern struct ovsdb_idl_column ovsrec_qos_columns[OVSREC_QOS_N_COLUMNS];
@@ -4492,9 +4492,9 @@ enum ovsrec_queue_column_id {
     OVSREC_QUEUE_N_COLUMNS
 };
 
-#define ovsrec_queue_col_other_config (ovsrec_queue_columns[OVSREC_QUEUE_COL_OTHER_CONFIG])
-#define ovsrec_queue_col_external_ids (ovsrec_queue_columns[OVSREC_QUEUE_COL_EXTERNAL_IDS])
 #define ovsrec_queue_col_dscp (ovsrec_queue_columns[OVSREC_QUEUE_COL_DSCP])
+#define ovsrec_queue_col_external_ids (ovsrec_queue_columns[OVSREC_QUEUE_COL_EXTERNAL_IDS])
+#define ovsrec_queue_col_other_config (ovsrec_queue_columns[OVSREC_QUEUE_COL_OTHER_CONFIG])
 
 extern struct ovsdb_idl_column ovsrec_queue_columns[OVSREC_QUEUE_N_COLUMNS];
 
@@ -4673,11 +4673,11 @@ enum ovsrec_ssl_column_id {
     OVSREC_SSL_N_COLUMNS
 };
 
-#define ovsrec_ssl_col_ca_cert (ovsrec_ssl_columns[OVSREC_SSL_COL_CA_CERT])
-#define ovsrec_ssl_col_external_ids (ovsrec_ssl_columns[OVSREC_SSL_COL_EXTERNAL_IDS])
 #define ovsrec_ssl_col_bootstrap_ca_cert (ovsrec_ssl_columns[OVSREC_SSL_COL_BOOTSTRAP_CA_CERT])
 #define ovsrec_ssl_col_private_key (ovsrec_ssl_columns[OVSREC_SSL_COL_PRIVATE_KEY])
+#define ovsrec_ssl_col_ca_cert (ovsrec_ssl_columns[OVSREC_SSL_COL_CA_CERT])
 #define ovsrec_ssl_col_certificate (ovsrec_ssl_columns[OVSREC_SSL_COL_CERTIFICATE])
+#define ovsrec_ssl_col_external_ids (ovsrec_ssl_columns[OVSREC_SSL_COL_EXTERNAL_IDS])
 
 extern struct ovsdb_idl_column ovsrec_ssl_columns[OVSREC_SSL_N_COLUMNS];
 
@@ -4875,11 +4875,11 @@ enum ovsrec_sflow_column_id {
 };
 
 #define ovsrec_sflow_col_targets (ovsrec_sflow_columns[OVSREC_SFLOW_COL_TARGETS])
-#define ovsrec_sflow_col_external_ids (ovsrec_sflow_columns[OVSREC_SFLOW_COL_EXTERNAL_IDS])
-#define ovsrec_sflow_col_header (ovsrec_sflow_columns[OVSREC_SFLOW_COL_HEADER])
-#define ovsrec_sflow_col_sampling (ovsrec_sflow_columns[OVSREC_SFLOW_COL_SAMPLING])
 #define ovsrec_sflow_col_polling (ovsrec_sflow_columns[OVSREC_SFLOW_COL_POLLING])
+#define ovsrec_sflow_col_external_ids (ovsrec_sflow_columns[OVSREC_SFLOW_COL_EXTERNAL_IDS])
 #define ovsrec_sflow_col_agent (ovsrec_sflow_columns[OVSREC_SFLOW_COL_AGENT])
+#define ovsrec_sflow_col_sampling (ovsrec_sflow_columns[OVSREC_SFLOW_COL_SAMPLING])
+#define ovsrec_sflow_col_header (ovsrec_sflow_columns[OVSREC_SFLOW_COL_HEADER])
 
 extern struct ovsdb_idl_column ovsrec_sflow_columns[OVSREC_SFLOW_N_COLUMNS];
 
@@ -5079,23 +5079,23 @@ enum ovsrec_table_id {
     OVSREC_N_TABLES
 };
 
-#define ovsrec_table_datapath (ovsrec_table_classes[OVSREC_TABLE_DATAPATH])
-#define ovsrec_table_autoattach (ovsrec_table_classes[OVSREC_TABLE_AUTOATTACH])
-#define ovsrec_table_controller (ovsrec_table_classes[OVSREC_TABLE_CONTROLLER])
-#define ovsrec_table_mirror (ovsrec_table_classes[OVSREC_TABLE_MIRROR])
-#define ovsrec_table_netflow (ovsrec_table_classes[OVSREC_TABLE_NETFLOW])
-#define ovsrec_table_flow_sample_collector_set (ovsrec_table_classes[OVSREC_TABLE_FLOW_SAMPLE_COLLECTOR_SET])
-#define ovsrec_table_ipfix (ovsrec_table_classes[OVSREC_TABLE_IPFIX])
 #define ovsrec_table_bridge (ovsrec_table_classes[OVSREC_TABLE_BRIDGE])
-#define ovsrec_table_qos (ovsrec_table_classes[OVSREC_TABLE_QOS])
 #define ovsrec_table_ct_zone (ovsrec_table_classes[OVSREC_TABLE_CT_ZONE])
-#define ovsrec_table_flow_table (ovsrec_table_classes[OVSREC_TABLE_FLOW_TABLE])
 #define ovsrec_table_ct_timeout_policy (ovsrec_table_classes[OVSREC_TABLE_CT_TIMEOUT_POLICY])
 #define ovsrec_table_manager (ovsrec_table_classes[OVSREC_TABLE_MANAGER])
+#define ovsrec_table_port (ovsrec_table_classes[OVSREC_TABLE_PORT])
+#define ovsrec_table_datapath (ovsrec_table_classes[OVSREC_TABLE_DATAPATH])
+#define ovsrec_table_ssl (ovsrec_table_classes[OVSREC_TABLE_SSL])
+#define ovsrec_table_flow_sample_collector_set (ovsrec_table_classes[OVSREC_TABLE_FLOW_SAMPLE_COLLECTOR_SET])
+#define ovsrec_table_controller (ovsrec_table_classes[OVSREC_TABLE_CONTROLLER])
+#define ovsrec_table_flow_table (ovsrec_table_classes[OVSREC_TABLE_FLOW_TABLE])
 #define ovsrec_table_interface (ovsrec_table_classes[OVSREC_TABLE_INTERFACE])
 #define ovsrec_table_sflow (ovsrec_table_classes[OVSREC_TABLE_SFLOW])
-#define ovsrec_table_ssl (ovsrec_table_classes[OVSREC_TABLE_SSL])
-#define ovsrec_table_port (ovsrec_table_classes[OVSREC_TABLE_PORT])
+#define ovsrec_table_ipfix (ovsrec_table_classes[OVSREC_TABLE_IPFIX])
+#define ovsrec_table_qos (ovsrec_table_classes[OVSREC_TABLE_QOS])
+#define ovsrec_table_autoattach (ovsrec_table_classes[OVSREC_TABLE_AUTOATTACH])
+#define ovsrec_table_netflow (ovsrec_table_classes[OVSREC_TABLE_NETFLOW])
+#define ovsrec_table_mirror (ovsrec_table_classes[OVSREC_TABLE_MIRROR])
 #define ovsrec_table_open_vswitch (ovsrec_table_classes[OVSREC_TABLE_OPEN_VSWITCH])
 #define ovsrec_table_queue (ovsrec_table_classes[OVSREC_TABLE_QUEUE])
 

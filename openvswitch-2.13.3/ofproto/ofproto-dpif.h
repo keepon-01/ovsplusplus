@@ -350,7 +350,7 @@ struct ofproto_dpif {
     uint64_t change_seq;           /* Connectivity status changes. */
 
     /* Work queues. */
-    struct guarded_list ams;      /* Contains "struct ofproto_async_msgs"s. */
+    struct guarded_list ams;      /* Contains "struct ofproto_async_msgs"s.      有意思，这里注意下*/
     struct seq *ams_seq;          /* For notifying 'ams' reception. */
     uint64_t ams_seqno;
 };

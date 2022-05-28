@@ -735,7 +735,12 @@ DECL_OFPROTO_COLLECTION (struct ofgroup *, group)
  * block as necessary to obtain a result.  Thus, these functions may return
  * EAGAIN (or EWOULDBLOCK or EINPROGRESS) only where the function descriptions
  * explicitly say those errors are a possibility.  We may relax this
- * requirement in the future if and when we encounter performance problems. */
+ * requirement in the future if and when we encounter performance problems.
+ * 
+ * 这里要特别说下，struct ofproto_class 这里面有非常多的操作函数，
+ * 在ofproto层面，这些操作函数完成了vswitchd要实现的所有功能
+ * 
+ *  */
 struct ofproto_class {
 /* ## ----------------- ## */
 /* ## Factory Functions ## */
@@ -1367,7 +1372,7 @@ struct ofproto_class {
      * in '*byte_count'.  UINT64_MAX indicates that the packet count or byte
      * count is unknown.
      *
-     * 这个地方对我来说是非常重要的
+     * 这个地方对我来说是非常重要的  skrskr
      * */
     void (*rule_get_stats)(struct rule *rule, struct pkt_stats *stats,
                            long long int *used)
@@ -1922,6 +1927,10 @@ struct ofproto_class {
 };
 
 extern const struct ofproto_class ofproto_dpif_class;
+/*extern表明变量或者函数是定义在其他其他文件中的.我认为这里的作用是我们
+在引用这个h文件的时候我们可以直接拿来使用
+*/
+                                                    
 
 int ofproto_class_register(const struct ofproto_class *);
 int ofproto_class_unregister(const struct ofproto_class *);

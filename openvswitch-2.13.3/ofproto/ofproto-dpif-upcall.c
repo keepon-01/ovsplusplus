@@ -1452,6 +1452,7 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
 {
     const struct dp_packet *packet = upcall->packet;
     const struct flow *flow = upcall->flow;
+    VLOG_INFO("mxc：这里前面看下源0%d,源1%d, 源2%d ", upcall->flow->dl_src.ea[0], upcall->flow->dl_src.ea[1], upcall->flow->dl_src.ea[2]);
     size_t actions_len = 0;
 
     // if(upcall->type == MISS_UPCALL) {
@@ -1515,7 +1516,7 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
         }
         break;
 
-    case CONTROLLER_UPCALL:    /* 咱就是说这个地方是不是生成packet in消息的地方 skrskr */
+    case CONTROLLER_UPCALL:    /* 这个地方是生成packet in消息的地方 skrskr */
         {   VLOG_INFO("mxc:controller_upcall");
             struct user_action_cookie *cookie = &upcall->cookie;
 
@@ -1560,6 +1561,8 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
                     .max_len = cookie->controller.max_len,
                 },
             };
+            
+            VLOG_INFO("mxc:packet in消息的dst_mac, dst_mac %d, %d",am->pin.up.base.flow_metadata.flow.dl_dst.be16[2], am->pin.up.base.flow_metadata.flow.dl_dst.ea[2]);
 
             if (cookie->controller.continuation) {
                 am->pin.up.stack = (state->stack_size
@@ -1594,7 +1597,7 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
             frozen_metadata_to_flow(&upcall->ofproto->up, &state->metadata,
                                     &frozen_flow);
             flow_get_metadata(&frozen_flow, &am->pin.up.base.flow_metadata);
-
+            VLOG_INFO("mxc：这里前后面看下源%d， 目%d", flow->dl_src.ea[0], frozen_flow.dl_dst.ea[0]);
             ofproto_dpif_send_async_msg(upcall->ofproto, am);
         }
         break;
