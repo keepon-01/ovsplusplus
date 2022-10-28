@@ -79,6 +79,7 @@
 #include "unixctl.h"
 #include "util.h"
 #include "uuid.h"
+#include "debug.h"
 
 VLOG_DEFINE_THIS_MODULE(dpif_netdev);
 
@@ -774,6 +775,9 @@ struct dp_netdev_pmd_thread {
     /* Set to true if the pmd thread needs to be reloaded. */
     bool need_reload;
 };
+
+
+struct hmap time_based_cache = HMAP_INITIALIZER(&time_based_cache);
 
 /* Interface to netdev-based datapath. */
 struct dpif_netdev {
@@ -6221,6 +6225,7 @@ dp_netdev_configure_pmd(struct dp_netdev_pmd_thread *pmd, struct dp_netdev *dp,
     hmap_init(&pmd->tx_ports);
     hmap_init(&pmd->tnl_port_cache);
     hmap_init(&pmd->send_port_cache);
+    hmap_init(&time_based_cache);
     /* init the 'flow_cache' since there is no
      * actual thread created for NON_PMD_CORE_ID. */
     if (core_id == NON_PMD_CORE_ID) {
@@ -6878,6 +6883,34 @@ handle_packet_upcall(struct dp_netdev_pmd_thread *pmd,
     return error;
 }
 
+int find_time_based_flow_cache(struct flow *f, struct time_based_cache_entry **entry)
+{
+    //struct hmap_node *hmap_node;
+    struct time_based_cache_entry *node;
+
+    HMAP_FOR_EACH (node, hmap_node, &time_based_cache) {
+        // if (memcmp(&f->nw_src,   &node->nw_src,   sizeof(ovs_be32)) &&
+        //     memcmp(&f->nw_dst,   &node->nw_dst,   sizeof(ovs_be32)) 
+        //     )
+         if(memcmp(&f->dl_dst, &node->dl_dst, sizeof(struct eth_addr))) {
+            *entry = node;
+            VLOG_INFO("look entrynode-> %d", (*entry)->count);
+            VLOG_INFO("look nodeentry-> %d", node->count);
+            return 1; 
+        }
+        VLOG_INFO("mxc[test]src_IP_flow: %d, src_IP_node: %d", f->nw_src, node->nw_src);
+        VLOG_INFO("mxc[test]dst_IP_flow: %d, dst_IP_node: %d", f->nw_dst, node->nw_dst);
+        VLOG_INFO("mxc[test]proto_flow: %d, proto_node: %d", f->nw_proto, node->nw_proto);
+        VLOG_INFO("mxc[test]src_port_flow: %d, src_port_node: %d", f->tp_src, node->tp_src);
+        VLOG_INFO("mxc[test]src_port_flow: %d, src_port_node: %d", f->tp_dst, node->tp_dst);
+        //jump
+    }
+    return 0;
+    // memcmp(&f->nw_proto, &node->nw_proto, sizeof(uint8_t))  &&
+    //         memcmp(&f->tp_src,   &node->tp_src,   sizeof(ovs_be16)) &&
+    //         memcmp(&f->tp_dst,   &node->tp_dst,   sizeof(ovs_be16))
+}
+
 static inline void
 fast_path_processing(struct dp_netdev_pmd_thread *pmd,
                      struct dp_packet_batch *packets_,
@@ -7056,7 +7089,102 @@ dp_netdev_input__(struct dp_netdev_pmd_thread *pmd,
         batches[i].flow->batch = NULL;
     }
 
+    struct time_based_cache_entry *node, *entry;
+    VLOG_INFO("mxc[LOOK]: n_batches%d", n_batches);
+
     for (i = 0; i < n_batches; i++) {
+        long long int now = time_msec();
+
+        #ifdef OFPROTO_H_DEBUG
+        VLOG_INFO("mxc[test]:test for packets number for per flow %d", batches[i].array.count);
+        VLOG_INFO("mxc[LOOK]: now%d", now);
+        #endif
+        
+        int is_insert = 0;
+        
+        HMAP_FOR_EACH_WITH_HASH (node, hmap_node, batches[i].flow->flow.dp_hash, &time_based_cache) {
+            // if (memcmp(&batches[i].flow->flow.nw_src, &node->nw_src, sizeof(ovs_be32)) &&
+            //     memcmp(&batches[i].flow->flow.nw_dst, &node->nw_dst, sizeof(ovs_be32)) &&
+            //     memcmp(&batches[i].flow->flow.nw_proto, &node->nw_proto, sizeof(uint8_t)) &&
+            //     memcmp(&batches[i].flow->flow.tp_src, &node->tp_src, sizeof(ovs_be16)) &&
+            //     memcmp(&batches[i].flow->flow.tp_dst, &node->tp_dst, sizeof(ovs_be16))) 
+             if ((batches[i].flow->flow.nw_src == node->nw_src) &&
+                 (batches[i].flow->flow.nw_dst == node->nw_dst) &&
+                 (batches[i].flow->flow.nw_proto == node->nw_proto) &&
+                 (batches[i].flow->flow.tp_src == node->tp_src) &&
+                 (batches[i].flow->flow.tp_dst == node->tp_dst) &&
+                 (memcmp(&batches[i].flow->flow.dl_src, &node->dl_src, sizeof(struct eth_addr))) &&
+                 (memcmp(&batches[i].flow->flow.dl_dst, &node->dl_dst, sizeof(struct eth_addr))))      //pro 
+                {
+                for (int j = 0; j < batches[i].array.count; j++) {
+                    node->now[(node->count + j) % MAX_HIT_RECORD] = now;
+                }
+                node->count += batches[i].array.count;       
+                is_insert = 1;
+
+                #ifdef OFPROTO_H_DEBUG
+                VLOG_INFO("MXC[test]:cache already have the info about the cache");
+                #endif
+
+                break;
+            }
+        }
+
+        if (!is_insert) {
+            entry = xmalloc(sizeof *node);
+            entry->nw_src = batches[i].flow->flow.nw_src;
+            entry->nw_dst = batches[i].flow->flow.nw_dst;
+            entry->nw_proto = batches[i].flow->flow.nw_proto;
+            entry->tp_src = batches[i].flow->flow.tp_src;
+            entry->tp_dst = batches[i].flow->flow.tp_dst;
+            entry->dl_src = batches[i].flow->flow.dl_src;
+            entry->dl_dst = batches[i].flow->flow.dl_dst;
+            entry->count = 0;
+            for (int j = 0; j < batches[i].array.count; j++) {   
+                entry->now[j] = now;
+            }
+            entry->count += batches[i].array.count;       ///false should1 ??
+            VLOG_INFO("mxc[test]: here we can see array.count, %ld", batches[i].array.count);
+            VLOG_INFO("mxc[test]: here we can see entry->count, %ld", entry->count);
+            hmap_insert(&time_based_cache, &entry->hmap_node, batches[i].flow->flow.dp_hash);
+            
+            //delete hamp_node for size limit 
+            if(time_based_cache.n == 10) {
+                struct time_based_cache_entry *node, *choose_delete;
+                long long int min = 9999999;
+                int limit_size = 6;
+                HMAP_FOR_EACH (node, hmap_node, &time_based_cache) {
+                    if(node->now[0] < min) {
+                        min = node->now[0];
+                        choose_delete = node;
+                        #ifdef OFPROTO_H_DEBUG
+                        VLOG_INFO("mxc[test]: see hmap_node count number %d", node->count);
+                        #endif
+                    }   
+                    limit_size--;
+                    if(limit_size <= 0) {
+                        break;
+                    }
+                }
+                hmap_remove(&time_based_cache, &choose_delete->hmap_node);
+                free(choose_delete);//or use shrink 
+                //hmap_shrink(&time_based_cache);
+            }
+
+            #ifdef OFPROTO_H_DEBUG
+            VLOG_INFO("MXC[test]:cache first have the info about the cache");
+            
+            VLOG_INFO("mxc[first.test]src_IP_flow: %d", entry->nw_src);
+            VLOG_INFO("mxc[first.test]dst_IP_flow: %d", entry->nw_dst);
+            VLOG_INFO("mxc[first.test]proto_flow: %d", entry->nw_proto);
+            VLOG_INFO("mxc[first.test]src_port_flow: %d", entry->tp_src);
+            VLOG_INFO("mxc[first.test]src_port_flow: %d", entry->tp_dst);
+            #endif
+        }
+        #ifdef OFPROTO_H_DEBUG
+        VLOG_INFO("mxc[test]:test for hashmap limit size %d ", time_based_cache.n);
+        #endif
+
         packet_batch_per_flow_execute(&batches[i], pmd);
     }
 }

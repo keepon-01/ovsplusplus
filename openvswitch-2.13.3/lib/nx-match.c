@@ -590,6 +590,7 @@ nx_pull_raw(const uint8_t *p, unsigned int match_len, bool strict,
     }
 
     match->flow.tunnel.metadata.tab = NULL;
+    VLOG_INFO("mxc:flowmod 源0 %d,源1 %d, 源2 %d ", match->flow.dl_src.ea[0], match->flow.dl_src.ea[1], match->flow.dl_src.ea[2]);
     return 0;
 }
 

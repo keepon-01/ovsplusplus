@@ -72,7 +72,7 @@
 #include "util.h"
 #include "uuid.h"
 #include "vlan-bitmap.h"
-
+#include "debug.h"
 VLOG_DEFINE_THIS_MODULE(ofproto_dpif);
 
 COVERAGE_DEFINE(ofproto_dpif_expired);
@@ -4116,8 +4116,13 @@ port_is_lacp_current(const struct ofport *ofport_)
 static void
 rule_expire(struct rule_dpif *rule, long long now)
     OVS_REQUIRES(ofproto_mutex)
-{
+{   
+    #ifdef ADD_CODE
+    uint16_t hard_timeout;
+    long long int idle_timeout;
+    #else
     uint16_t hard_timeout, idle_timeout;
+    #endif
     int reason = -1;
 
     hard_timeout = rule->up.hard_timeout;
@@ -4142,10 +4147,15 @@ rule_expire(struct rule_dpif *rule, long long now)
         ovs_mutex_lock(&rule->stats_mutex);
         used = rule->stats.used;
         ovs_mutex_unlock(&rule->stats_mutex);
-
+        #ifdef ADD_CODE
+        if (now > used + idle_timeout) {
+            reason = OFPRR_IDLE_TIMEOUT;
+        }
+        #else
         if (now > used + idle_timeout * 1000) {
             reason = OFPRR_IDLE_TIMEOUT;
         }
+        #endif
     }
 
     if (reason >= 0) {

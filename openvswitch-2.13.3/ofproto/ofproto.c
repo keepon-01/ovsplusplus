@@ -66,6 +66,7 @@
 #include "unaligned.h"
 #include "unixctl.h"
 #include "util.h"
+#include "debug.h"
 
 VLOG_DEFINE_THIS_MODULE(ofproto);
 
@@ -5135,9 +5136,14 @@ add_flow_init(struct ofproto *ofproto, struct ofproto_flow_mod *ofm,
 
     if (!ofm->temp_rule) {
         cls_rule_init_from_minimatch(&cr, &fm->match, fm->priority);
+        // struct flow dst1 = {1};
 
+        // miniflow_expand(fm->match.flow, &dst1);
         /* Allocate new rule.  Destroys 'cr'. */
         uint64_t map = miniflow_get_tun_metadata_present_map(fm->match.flow);
+        // struct flow dst = {0};
+
+        // miniflow_expand(fm->match.flow, &dst);
         error = ofproto_rule_create(ofproto, &cr, table - ofproto->tables,
                                     fm->new_cookie, fm->idle_timeout,
                                     fm->hard_timeout, fm->flags,
@@ -5303,6 +5309,7 @@ ofproto_rule_create(struct ofproto *ofproto, struct cls_rule *cr,
     rule->created = rule->modified = time_msec();
     rule->idle_timeout = idle_timeout;
     rule->hard_timeout = hard_timeout;
+    
     *CONST_CAST(uint16_t *, &rule->importance) = importance;
     rule->removed_reason = OVS_OFPRR_NONE;
 
@@ -5332,6 +5339,15 @@ ofproto_rule_create(struct ofproto *ofproto, struct cls_rule *cr,
     rule->ofpacts_tlv_bitmap = ofpacts_tlv_bitmap;
     mf_vl_mff_ref(&rule->ofproto->vl_mff_map, match_tlv_bitmap);
     mf_vl_mff_ref(&rule->ofproto->vl_mff_map, ofpacts_tlv_bitmap);
+    
+    // struct flow dst;
+    // miniflow_expand(rule->cr.match.flow, &dst);
+    // VLOG_INFO("mxc[1.test]src_IP_flow: %d", dst.nw_src);
+    // VLOG_INFO("mxc[1.test]dst_IP_flow: %d", dst.nw_dst);
+    // VLOG_INFO("mxc[1.test]proto_flow: %d", dst.nw_proto);
+    // VLOG_INFO("mxc[1.test]src_port_flow: %d", dst.tp_src);
+    // VLOG_INFO("mxc[1.test]src_port_flow: %d", dst.tp_dst);
+    //find_time_based_flow_cache(&dst);
 
     *new_rule = rule;
     return 0;
@@ -6173,6 +6189,7 @@ ofproto_rule_reduce_timeouts__(struct rule *rule,
     ovs_mutex_unlock(&rule->mutex);
 }
 
+//这里是减少他的过期时间
 void
 ofproto_rule_reduce_timeouts(struct rule *rule,
                              uint16_t idle_timeout, uint16_t hard_timeout)
@@ -6248,6 +6265,40 @@ handle_flow_mod__(struct ofproto *ofproto, const struct ofputil_flow_mod *fm,
     ofm.version = ofproto->tables_version + 1;
     error = ofproto_flow_mod_start(ofproto, &ofm);                /* 重要的步骤2 */
     if (!error) {
+
+        struct flow dst = {0};
+        miniflow_expand(fm->match.flow, &dst);
+        //struct time_based_cache_entry entry = {0};
+        struct time_based_cache_entry *entry = (struct time_based_cache_entry*)malloc(sizeof(struct time_based_cache_entry));//free
+        int ret = find_time_based_flow_cache(&dst, &entry);
+        VLOG_INFO("mxc:[test]%d:look retvalue", ret);
+        if(ret) {
+            struct rule *rule;
+            RULE_COLLECTION_FOR_EACH(rule, &ofm.new_rules) {
+                if(entry->count == 1) {
+                    rule->idle_timeout = 1000;
+                    #ifdef OFPROTO_H_DEBUG
+                    VLOG_INFO("MXC:[TEST]:search for cache, have one");
+                    #endif
+                }
+                else {
+                    rule->idle_timeout = (entry->now[1] - entry->now[0])  + 2 * 1000;
+                    #ifdef OFPROTO_H_DEBUG
+                    VLOG_INFO("mxc:[test]:cache sizenow%d", entry->count);
+                    VLOG_INFO("MXC:[test]:search for cache , have more than one");
+                    #endif
+                }
+            }
+            VLOG_INFO("mxc[2.test]modify cache v2:");
+        }
+        #ifdef OFPROTO_H_DEBUG
+        VLOG_INFO("mxc[1.test]src_IP_flow: %d", dst.nw_src);
+        VLOG_INFO("mxc[1.test]dst_IP_flow: %d", dst.nw_dst);
+        VLOG_INFO("mxc[1.test]proto_flow: %d", dst.nw_proto);
+        VLOG_INFO("mxc[1.test]src_port_flow: %d", dst.tp_src);
+        VLOG_INFO("mxc[1.test]src_port_flow: %d", dst.tp_dst);
+        #endif
+
         ofproto_bump_tables_version(ofproto);
         error = ofproto_flow_mod_finish(ofproto, &ofm, req);      /* 重要的步骤3 */
         ofmonitor_flush(ofproto->connmgr);
@@ -8721,6 +8772,7 @@ handle_openflow(struct ofconn *ofconn, const struct ovs_list *msgs)
         } else if (!ovs_list_is_short(msgs)) {
             error = OFPERR_OFPBRC_BAD_STAT;
         } else {
+            //i think from here wo can big do article
             error = handle_single_part_openflow(ofconn, msg->data, type);
         }
     }
@@ -8877,7 +8929,7 @@ eviction_group_hash_rule(struct rule *rule)
     uint32_t hash;
 
     hash = table->eviction_group_id_basis;
-    miniflow_expand(rule->cr.match.flow, &flow);
+    miniflow_expand(rule->cr.match.flow, &flow);//here
     for (sf = table->eviction_fields;
          sf < &table->eviction_fields[table->n_eviction_fields];
          sf++)
@@ -9164,7 +9216,7 @@ ofproto_rule_insert__(struct ofproto *ofproto, struct rule *rule)
         ovs_list_insert(&ofproto->expirable, &rule->expirable);
     }
     cookies_insert(ofproto, rule);
-    eviction_group_add_rule(rule);
+    eviction_group_add_rule(rule);//open the door
     if (actions->has_meter) {
         meter_insert_rule(rule);
     }

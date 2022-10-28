@@ -779,8 +779,8 @@ udpif_upcall_handler(void *arg)
 
     return NULL;
 }
-
 /* 初步认为是几个thread循环调用这个方法recv_upcalls处理上送的数据包 */
+
 static size_t
 recv_upcalls(struct handler *handler)
 {
@@ -1452,7 +1452,7 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
 {
     const struct dp_packet *packet = upcall->packet;
     const struct flow *flow = upcall->flow;
-    VLOG_INFO("mxc：这里前面看下源0%d,源1%d, 源2%d ", upcall->flow->dl_src.ea[0], upcall->flow->dl_src.ea[1], upcall->flow->dl_src.ea[2]);
+    VLOG_INFO("mxc：这里前面看下源0%d,源1%d, 源2%d  -------------", upcall->flow->dl_src.ea[0], upcall->flow->dl_src.ea[1], upcall->flow->dl_src.ea[2]);
     size_t actions_len = 0;
 
     // if(upcall->type == MISS_UPCALL) {
@@ -1517,7 +1517,9 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
         break;
 
     case CONTROLLER_UPCALL:    /* 这个地方是生成packet in消息的地方 skrskr */
-        {   VLOG_INFO("mxc:controller_upcall");
+        {   
+            pid_t pid_packet_in = getpid();
+            VLOG_INFO("mxc:controller_upcall,pid:%d", pid_packet_in);
             struct user_action_cookie *cookie = &upcall->cookie;
 
             if (cookie->controller.dont_send) {
@@ -1599,6 +1601,7 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
             flow_get_metadata(&frozen_flow, &am->pin.up.base.flow_metadata);
             VLOG_INFO("mxc：这里前后面看下源%d， 目%d", flow->dl_src.ea[0], frozen_flow.dl_dst.ea[0]);
             ofproto_dpif_send_async_msg(upcall->ofproto, am);
+
         }
         break;
 

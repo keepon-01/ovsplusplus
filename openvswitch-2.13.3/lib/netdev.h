@@ -21,10 +21,32 @@
 #include "openvswitch/types.h"
 #include "packets.h"
 #include "flow.h"
-
+#include "hmapx.h"
 #ifdef  __cplusplus
 extern "C" {
 #endif
+
+
+#define MAX_HIT_RECORD 1024
+struct time_based_cache_entry {
+    struct hmap_node hmap_node;
+
+    // 5-tuple struct flow
+    ovs_be32 nw_src;                /* IPv4 source address or ARP SPA. */
+    ovs_be32 nw_dst;                /* IPv4 destination address or ARP TPA. */
+
+    uint8_t nw_proto;               /* IP protocol or low 8 bits of ARP opcode. */
+
+    ovs_be16 tp_src;                /* TCP/UDP/SCTP source port/ICMP type. */
+    ovs_be16 tp_dst;                /* TCP/UDP/SCTP destination port/ICMP code. */
+
+    struct eth_addr dl_dst;     /* Ethernet destination address. */
+    struct eth_addr dl_src;     /* Ethernet source address. */
+
+    uint64_t count;                 /* Entry Hit count */
+    uint64_t now[MAX_HIT_RECORD];   /* Histroy Hit record */
+};
+
 
 /* Generic interface to network devices ("netdev"s).
  *
