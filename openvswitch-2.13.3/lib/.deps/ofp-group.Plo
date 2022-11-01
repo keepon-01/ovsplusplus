@@ -71,7 +71,12 @@ lib/ofp-group.lo: lib/ofp-group.c /usr/include/stdc-predef.h config.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
  /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h lib/packets.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/packets.h \
  include/openvswitch/nsh.h include/odp-netlink.h \
  include/openvswitch/types.h lib/random.h lib/hash.h lib/tun-metadata.h \
  include/openvswitch/dynamic-string.h lib/netlink.h \
@@ -321,6 +326,16 @@ lib/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/stdio.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio2.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/packets.h:
 

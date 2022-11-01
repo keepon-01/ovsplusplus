@@ -75,8 +75,13 @@ ovsdb/ovsdb-tool.o: ovsdb/ovsdb-tool.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /usr/include/x86_64-linux-gnu/bits/xopen_lim.h lib/lockfile.h \
- ovsdb/log.h include/openvswitch/hmap.h include/openvswitch/json.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/lockfile.h ovsdb/log.h \
+ include/openvswitch/hmap.h include/openvswitch/json.h \
  include/openvswitch/shash.h ovsdb/ovsdb.h include/openvswitch/list.h \
  lib/ovsdb-data.h lib/ovsdb-types.h lib/ovsdb-error.h lib/ovsdb-parser.h \
  lib/sset.h ovsdb/raft.h lib/uuid.h ovsdb/raft-private.h lib/sset.h \
@@ -313,6 +318,16 @@ lib/util.h:
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/lockfile.h:
 

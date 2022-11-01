@@ -90,7 +90,11 @@ ovsdb/ovsdb-client.o: ovsdb/ovsdb-client.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/sys/un.h /usr/include/netinet/in.h \
  /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/netinet/in_systm.h \
  /usr/include/netinet/ip.h lib/util.h /usr/include/arpa/inet.h \
- /usr/include/inttypes.h lib/stream-ssl.h ovsdb/table.h \
+ /usr/include/inttypes.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/stream-ssl.h ovsdb/table.h \
  ovsdb/transaction.h ovsdb/monitor.h ovsdb/condition.h lib/bitmap.h \
  lib/ovsdb-condition.h lib/timeval.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h \
@@ -388,6 +392,16 @@ lib/util.h:
 /usr/include/arpa/inet.h:
 
 /usr/include/inttypes.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/stream-ssl.h:
 

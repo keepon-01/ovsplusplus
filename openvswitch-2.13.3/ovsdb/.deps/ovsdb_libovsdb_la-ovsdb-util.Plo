@@ -62,7 +62,12 @@ ovsdb/ovsdb_libovsdb_la-ovsdb-util.lo: ovsdb/ovsdb-util.c \
  /usr/include/x86_64-linux-gnu/bits/stdio2.h lib/string.h \
  /usr/include/string.h /usr/include/x86_64-linux-gnu/bits/string.h \
  /usr/include/x86_64-linux-gnu/bits/string2.h \
- /usr/include/x86_64-linux-gnu/bits/string3.h ovsdb/table.h \
+ /usr/include/x86_64-linux-gnu/bits/string3.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h ovsdb/table.h \
  ovsdb/ovsdb-util.h include/openvswitch/vlog.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h include/openvswitch/thread.h \
  /usr/include/pthread.h /usr/include/sched.h \
@@ -253,6 +258,16 @@ lib/string.h:
 /usr/include/x86_64-linux-gnu/bits/string2.h:
 
 /usr/include/x86_64-linux-gnu/bits/string3.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 ovsdb/table.h:
 

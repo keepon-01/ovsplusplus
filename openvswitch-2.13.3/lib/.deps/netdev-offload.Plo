@@ -60,7 +60,11 @@ lib/netdev-offload.lo: lib/netdev-offload.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h include/openvswitch/util.h \
- include/openvswitch/version.h lib/tun-metadata.h \
+ include/openvswitch/version.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/tun-metadata.h \
  include/openvswitch/dynamic-string.h lib/netlink.h \
  lib/netlink-protocol.h include/linux/netlink.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -95,8 +99,8 @@ lib/netdev-offload.lo: lib/netdev-offload.c /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h lib/coverage.h \
  lib/ovs-thread.h include/openvswitch/thread.h lib/dpif.h lib/dpdk.h \
  lib/dp-packet.h lib/netdev-afxdp.h lib/netdev-dpdk.h lib/netdev.h \
- include/openvswitch/ofp-meter.h include/openvswitch/ofp-protocol.h \
- lib/ovs-numa.h include/openvswitch/hmap.h lib/fatal-signal.h \
+ lib/hmapx.h include/openvswitch/hmap.h include/openvswitch/ofp-meter.h \
+ include/openvswitch/ofp-protocol.h lib/ovs-numa.h lib/fatal-signal.h \
  /usr/include/signal.h /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo.h \
  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
@@ -297,6 +301,16 @@ include/openvswitch/util.h:
 
 include/openvswitch/version.h:
 
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
+
 lib/tun-metadata.h:
 
 include/openvswitch/dynamic-string.h:
@@ -437,13 +451,15 @@ lib/netdev-dpdk.h:
 
 lib/netdev.h:
 
+lib/hmapx.h:
+
+include/openvswitch/hmap.h:
+
 include/openvswitch/ofp-meter.h:
 
 include/openvswitch/ofp-protocol.h:
 
 lib/ovs-numa.h:
-
-include/openvswitch/hmap.h:
 
 lib/fatal-signal.h:
 

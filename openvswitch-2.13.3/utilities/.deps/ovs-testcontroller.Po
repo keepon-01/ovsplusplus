@@ -74,7 +74,11 @@ utilities/ovs-testcontroller.o: utilities/ovs-testcontroller.c \
  /usr/include/x86_64-linux-gnu/bits/socket2.h \
  /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/arpa/inet.h \
  /usr/include/inttypes.h include/openvswitch/util.h \
- include/openvswitch/version.h include/openvswitch/ofpbuf.h \
+ include/openvswitch/version.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h include/openvswitch/ofpbuf.h \
  include/openvswitch/dynamic-string.h include/openvswitch/list.h \
  include/openvswitch/poll-loop.h /usr/include/poll.h \
  /usr/include/x86_64-linux-gnu/sys/poll.h \
@@ -313,6 +317,16 @@ lib/util.h:
 include/openvswitch/util.h:
 
 include/openvswitch/version.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 include/openvswitch/ofpbuf.h:
 

@@ -65,7 +65,11 @@ lib/rconn.lo: lib/rconn.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
  /usr/include/x86_64-linux-gnu/bits/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/stdio2.h include/openvswitch/util.h \
- include/openvswitch/version.h lib/ovs-atomic-c11.h \
+ include/openvswitch/version.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/ovs-atomic-c11.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h \
  include/openvswitch/thread.h include/openflow/openflow.h \
  include/openflow/openflow-1.0.h include/openflow/openflow-common.h \
@@ -271,6 +275,16 @@ lib/stdio.h:
 include/openvswitch/util.h:
 
 include/openvswitch/version.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/ovs-atomic-c11.h:
 

@@ -57,8 +57,13 @@ lib/hindex.lo: lib/hindex.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/string2.h \
  /usr/include/x86_64-linux-gnu/bits/string3.h lib/compiler.h \
  include/openvswitch/compiler.h include/openvswitch/util.h \
- include/openvswitch/version.h include/openvswitch/types.h lib/coverage.h \
- lib/ovs-thread.h /usr/include/pthread.h /usr/include/sched.h \
+ include/openvswitch/version.h include/openvswitch/types.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/coverage.h lib/ovs-thread.h \
+ /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h lib/ovs-atomic.h \
@@ -224,6 +229,16 @@ include/openvswitch/util.h:
 include/openvswitch/version.h:
 
 include/openvswitch/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/coverage.h:
 

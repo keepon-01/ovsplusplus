@@ -71,7 +71,12 @@ lib/tc.lo: lib/tc.c /usr/include/stdc-predef.h config.h lib/tc.h \
  /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h lib/compiler.h lib/util.h \
- /usr/include/arpa/inet.h /usr/include/inttypes.h lib/ovs-atomic-c11.h \
+ /usr/include/arpa/inet.h /usr/include/inttypes.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/ovs-atomic-c11.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h lib/ovs-thread.h \
  include/openvswitch/thread.h include/odp-netlink.h \
  include/openvswitch/types.h include/openvswitch/flow.h \
@@ -310,6 +315,16 @@ lib/util.h:
 /usr/include/arpa/inet.h:
 
 /usr/include/inttypes.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/ovs-atomic-c11.h:
 

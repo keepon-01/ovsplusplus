@@ -90,9 +90,13 @@ lib/socket-util-unix.lo: lib/socket-util-unix.c \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h lib/compiler.h \
  include/openvswitch/util.h include/openvswitch/version.h \
- include/openvswitch/vlog.h /usr/include/x86_64-linux-gnu/bits/timex.h \
- include/openvswitch/list.h include/openvswitch/thread.h \
- /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h include/openvswitch/vlog.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h include/openvswitch/list.h \
+ include/openvswitch/thread.h /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  include/openvswitch/token-bucket.h
@@ -342,6 +346,16 @@ lib/compiler.h:
 include/openvswitch/util.h:
 
 include/openvswitch/version.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 include/openvswitch/vlog.h:
 

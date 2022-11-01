@@ -84,7 +84,11 @@ lib/socket-util.lo: lib/socket-util.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h lib/compiler.h lib/util.h \
  /usr/include/inttypes.h include/openvswitch/util.h \
- include/openvswitch/version.h lib/ovs-atomic-c11.h \
+ include/openvswitch/version.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/ovs-atomic-c11.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h \
  include/openvswitch/thread.h lib/packets.h include/openvswitch/geneve.h \
  include/openvswitch/packets.h include/openvswitch/tun-metadata.h \
@@ -352,6 +356,16 @@ lib/util.h:
 include/openvswitch/util.h:
 
 include/openvswitch/version.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/ovs-atomic-c11.h:
 

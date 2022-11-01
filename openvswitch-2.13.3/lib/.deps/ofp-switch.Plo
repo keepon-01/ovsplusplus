@@ -72,7 +72,12 @@ lib/ofp-switch.lo: lib/ofp-switch.c /usr/include/stdc-predef.h config.h \
  include/openvswitch/ofp-ed-props.h include/openvswitch/ofp-msgs.h \
  include/openvswitch/ofp-port.h include/openvswitch/hmap.h \
  include/openvswitch/netdev.h include/openvswitch/namemap.h \
- include/openvswitch/ofp-print.h lib/util.h lib/compiler.h
+ include/openvswitch/ofp-print.h lib/util.h lib/compiler.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h
 
 /usr/include/stdc-predef.h:
 
@@ -291,3 +296,13 @@ include/openvswitch/ofp-print.h:
 lib/util.h:
 
 lib/compiler.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:

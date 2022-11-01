@@ -5309,7 +5309,6 @@ ofproto_rule_create(struct ofproto *ofproto, struct cls_rule *cr,
     rule->created = rule->modified = time_msec();
     rule->idle_timeout = idle_timeout;
     rule->hard_timeout = hard_timeout;
-    
     *CONST_CAST(uint16_t *, &rule->importance) = importance;
     rule->removed_reason = OVS_OFPRR_NONE;
 
@@ -6238,7 +6237,9 @@ handle_flow_mod(struct ofconn *ofconn, const struct ofp_header *oh)
                                     ofproto->n_tables);
     if (!error) {/* 如果上面成功的话 */
         count_flow_mod++;
-        VLOG_INFO("mxc_count_flow_mod:%d,pid:%u", count_flow_mod, pid_flow_mod);
+// #ifdef LOG
+//         VLOG_INFO("mxc_count_flow_mod:%d,pid:%u", count_flow_mod, pid_flow_mod);
+// #endif
         struct openflow_mod_requester req = { ofconn, oh };
         error = handle_flow_mod__(ofproto, &fm, &req);
         minimatch_destroy(&fm.match);
@@ -6265,7 +6266,7 @@ handle_flow_mod__(struct ofproto *ofproto, const struct ofputil_flow_mod *fm,
     ofm.version = ofproto->tables_version + 1;
     error = ofproto_flow_mod_start(ofproto, &ofm);                /* 重要的步骤2 */
     if (!error) {
-
+        #ifdef ADD_CODE
         struct flow dst = {0};
         miniflow_expand(fm->match.flow, &dst);
         //struct time_based_cache_entry entry = {0};
@@ -6298,7 +6299,7 @@ handle_flow_mod__(struct ofproto *ofproto, const struct ofputil_flow_mod *fm,
         VLOG_INFO("mxc[1.test]src_port_flow: %d", dst.tp_src);
         VLOG_INFO("mxc[1.test]src_port_flow: %d", dst.tp_dst);
         #endif
-
+        #endif
         ofproto_bump_tables_version(ofproto);
         error = ofproto_flow_mod_finish(ofproto, &ofm, req);      /* 重要的步骤3 */
         ofmonitor_flush(ofproto->connmgr);
@@ -8757,13 +8758,13 @@ handle_single_part_openflow(struct ofconn *ofconn, const struct ofp_header *oh,
 static void
 handle_openflow(struct ofconn *ofconn, const struct ovs_list *msgs)
     OVS_EXCLUDED(ofproto_mutex)
-{   VLOG_INFO("----mxc---packet---");
+{  
     COVERAGE_INC(ofproto_recv_openflow);
 
     struct ofpbuf *msg = ofpbuf_from_list(ovs_list_front(msgs));
     enum ofptype type;
     enum ofperr error = ofptype_decode(&type, msg->data);/* 获得数据包的类型 */
-    VLOG_INFO("----mxc---packet--成功测试521：16.56-");
+
     if (!error) {
         if (type == OFPTYPE_TABLE_FEATURES_STATS_REQUEST) {
             handle_table_features_request(ofconn, msgs);

@@ -74,7 +74,11 @@ tests/test-jsonrpc.o: tests/test-jsonrpc.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/string3.h /usr/include/netinet/in.h \
  /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/netinet/in_systm.h \
  /usr/include/netinet/ip.h lib/util.h /usr/include/arpa/inet.h \
- /usr/include/inttypes.h lib/timeval.h \
+ /usr/include/inttypes.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/timeval.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h \
  include/openvswitch/type-props.h lib/util.h include/openvswitch/vlog.h \
  include/openvswitch/list.h include/openvswitch/thread.h \
@@ -304,6 +308,16 @@ lib/util.h:
 /usr/include/arpa/inet.h:
 
 /usr/include/inttypes.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/timeval.h:
 

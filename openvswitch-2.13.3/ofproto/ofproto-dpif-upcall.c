@@ -44,6 +44,7 @@
 #include "unixctl.h"
 #include "openvswitch/vlog.h"
 #include "lib/netdev-provider.h"
+#include "debug.h"
 
 #define UPCALL_MAX_BATCH 64
 #define REVALIDATE_MAX_BATCH 50
@@ -56,6 +57,8 @@ COVERAGE_DEFINE(handler_duplicate_upcall);
 COVERAGE_DEFINE(upcall_ukey_contention);
 COVERAGE_DEFINE(upcall_ukey_replace);
 COVERAGE_DEFINE(revalidate_missed_dp_flow);
+
+extern struct statistic *ctx;
 
 /* A thread that reads upcalls from dpif, forwards each upcall's packet,
  * and possibly sets up a kernel flow as a cache. */
@@ -1452,7 +1455,9 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
 {
     const struct dp_packet *packet = upcall->packet;
     const struct flow *flow = upcall->flow;
+    #ifdef LOG
     VLOG_INFO("mxc：这里前面看下源0%d,源1%d, 源2%d  -------------", upcall->flow->dl_src.ea[0], upcall->flow->dl_src.ea[1], upcall->flow->dl_src.ea[2]);
+    #endif
     size_t actions_len = 0;
 
     // if(upcall->type == MISS_UPCALL) {
@@ -1460,14 +1465,20 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
     // }
     switch (upcall->type) {                                  
     case MISS_UPCALL:
+#ifdef LOG
         VLOG_INFO("mxc:MISS_UPCALL");
+#endif
     case SLOW_PATH_UPCALL:
+#ifdef LOG
         VLOG_INFO("mxc:SLOW_PATH_UPCALL");
+#endif
         upcall_xlate(udpif, upcall, odp_actions, wc);           /* 关键函数查找openflow流表 */
         return 0;
 
     case SFLOW_UPCALL:
+#ifdef LOG
         VLOG_INFO("mxc:sflow_upcall");
+#endif
         if (upcall->sflow) {
             struct dpif_sflow_actions sflow_actions;
 
@@ -1517,9 +1528,11 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
         break;
 
     case CONTROLLER_UPCALL:    /* 这个地方是生成packet in消息的地方 skrskr */
-        {   
+        {   VLOG_INFO("++++++++++100");
+#ifdef LOG
             pid_t pid_packet_in = getpid();
             VLOG_INFO("mxc:controller_upcall,pid:%d", pid_packet_in);
+#endif
             struct user_action_cookie *cookie = &upcall->cookie;
 
             if (cookie->controller.dont_send) {
@@ -1563,9 +1576,9 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
                     .max_len = cookie->controller.max_len,
                 },
             };
-            
+#ifdef LOG
             VLOG_INFO("mxc:packet in消息的dst_mac, dst_mac %d, %d",am->pin.up.base.flow_metadata.flow.dl_dst.be16[2], am->pin.up.base.flow_metadata.flow.dl_dst.ea[2]);
-
+#endif
             if (cookie->controller.continuation) {
                 am->pin.up.stack = (state->stack_size
                           ? xmemdup(state->stack, state->stack_size)
@@ -1599,9 +1612,12 @@ process_upcall(struct udpif *udpif, struct upcall *upcall,
             frozen_metadata_to_flow(&upcall->ofproto->up, &state->metadata,
                                     &frozen_flow);
             flow_get_metadata(&frozen_flow, &am->pin.up.base.flow_metadata);
+#ifdef LOG
             VLOG_INFO("mxc：这里前后面看下源%d， 目%d", flow->dl_src.ea[0], frozen_flow.dl_dst.ea[0]);
+#endif
             ofproto_dpif_send_async_msg(upcall->ofproto, am);
-
+            VLOG_INFO("++++++++++++2");
+            ctx->st->packet_in_num++;
         }
         break;
 

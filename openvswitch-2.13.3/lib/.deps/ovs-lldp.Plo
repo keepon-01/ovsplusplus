@@ -61,7 +61,12 @@ lib/ovs-lldp.lo: lib/ovs-lldp.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h lib/tun-metadata.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/tun-metadata.h \
  include/openvswitch/dynamic-string.h lib/netlink.h \
  lib/netlink-protocol.h include/linux/netlink.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -91,7 +96,7 @@ lib/ovs-lldp.lo: lib/ovs-lldp.c /usr/include/stdc-predef.h config.h \
  include/openvswitch/token-bucket.h lib/ovs-atomic.h lib/ovs-atomic-c11.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h lib/timer.h \
  lib/lldp/lldpd-structs.h lib/netdev.h include/openvswitch/netdev.h \
- include/openvswitch/poll-loop.h /usr/include/poll.h \
+ lib/hmapx.h include/openvswitch/poll-loop.h /usr/include/poll.h \
  /usr/include/x86_64-linux-gnu/sys/poll.h \
  /usr/include/x86_64-linux-gnu/bits/poll.h \
  /usr/include/x86_64-linux-gnu/bits/poll2.h lib/smap.h lib/unixctl.h
@@ -282,6 +287,16 @@ lib/stdio.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
+
 lib/tun-metadata.h:
 
 include/openvswitch/dynamic-string.h:
@@ -405,6 +420,8 @@ lib/lldp/lldpd-structs.h:
 lib/netdev.h:
 
 include/openvswitch/netdev.h:
+
+lib/hmapx.h:
 
 include/openvswitch/poll-loop.h:
 

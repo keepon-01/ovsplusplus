@@ -75,11 +75,15 @@ vtep/vtep-ctl.o: vtep/vtep-ctl.c /usr/include/stdc-predef.h config.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
- include/openvswitch/json.h lib/ovsdb-data.h lib/ovsdb-types.h lib/uuid.h \
- include/openvswitch/uuid.h lib/ovsdb-idl.h lib/ovsdb-data.h \
- include/openvswitch/list.h lib/ovsdb-condition.h lib/skiplist.h \
- include/openvswitch/poll-loop.h /usr/include/poll.h \
- /usr/include/x86_64-linux-gnu/sys/poll.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h include/openvswitch/json.h \
+ lib/ovsdb-data.h lib/ovsdb-types.h lib/uuid.h include/openvswitch/uuid.h \
+ lib/ovsdb-idl.h lib/ovsdb-data.h include/openvswitch/list.h \
+ lib/ovsdb-condition.h lib/skiplist.h include/openvswitch/poll-loop.h \
+ /usr/include/poll.h /usr/include/x86_64-linux-gnu/sys/poll.h \
  /usr/include/x86_64-linux-gnu/bits/poll.h \
  /usr/include/x86_64-linux-gnu/bits/poll2.h lib/process.h lib/stream.h \
  lib/socket-util.h /usr/include/x86_64-linux-gnu/sys/time.h \
@@ -316,6 +320,16 @@ lib/util.h:
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 include/openvswitch/json.h:
 

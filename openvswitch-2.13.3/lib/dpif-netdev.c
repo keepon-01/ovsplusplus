@@ -776,9 +776,9 @@ struct dp_netdev_pmd_thread {
     bool need_reload;
 };
 
-
+#ifdef ADD_CODE
 struct hmap time_based_cache = HMAP_INITIALIZER(&time_based_cache);
-
+#endif
 /* Interface to netdev-based datapath. */
 struct dpif_netdev {
     struct dpif dpif;
@@ -6225,7 +6225,9 @@ dp_netdev_configure_pmd(struct dp_netdev_pmd_thread *pmd, struct dp_netdev *dp,
     hmap_init(&pmd->tx_ports);
     hmap_init(&pmd->tnl_port_cache);
     hmap_init(&pmd->send_port_cache);
+    #ifdef ADD_CODE
     hmap_init(&time_based_cache);
+    #endif
     /* init the 'flow_cache' since there is no
      * actual thread created for NON_PMD_CORE_ID. */
     if (core_id == NON_PMD_CORE_ID) {
@@ -6882,7 +6884,7 @@ handle_packet_upcall(struct dp_netdev_pmd_thread *pmd,
     }
     return error;
 }
-
+#ifdef ADD_CODE
 int find_time_based_flow_cache(struct flow *f, struct time_based_cache_entry **entry)
 {
     //struct hmap_node *hmap_node;
@@ -6903,14 +6905,14 @@ int find_time_based_flow_cache(struct flow *f, struct time_based_cache_entry **e
         VLOG_INFO("mxc[test]proto_flow: %d, proto_node: %d", f->nw_proto, node->nw_proto);
         VLOG_INFO("mxc[test]src_port_flow: %d, src_port_node: %d", f->tp_src, node->tp_src);
         VLOG_INFO("mxc[test]src_port_flow: %d, src_port_node: %d", f->tp_dst, node->tp_dst);
-        //jump
+        //jump?
     }
     return 0;
     // memcmp(&f->nw_proto, &node->nw_proto, sizeof(uint8_t))  &&
     //         memcmp(&f->tp_src,   &node->tp_src,   sizeof(ovs_be16)) &&
     //         memcmp(&f->tp_dst,   &node->tp_dst,   sizeof(ovs_be16))
 }
-
+#endif
 static inline void
 fast_path_processing(struct dp_netdev_pmd_thread *pmd,
                      struct dp_packet_batch *packets_,
@@ -7088,11 +7090,13 @@ dp_netdev_input__(struct dp_netdev_pmd_thread *pmd,
     for (i = 0; i < n_batches; i++) {
         batches[i].flow->batch = NULL;
     }
-
+#ifdef ADD_CODE
     struct time_based_cache_entry *node, *entry;
     VLOG_INFO("mxc[LOOK]: n_batches%d", n_batches);
+#endif
 
     for (i = 0; i < n_batches; i++) {
+#ifdef ADD_CODE
         long long int now = time_msec();
 
         #ifdef OFPROTO_H_DEBUG
@@ -7171,7 +7175,7 @@ dp_netdev_input__(struct dp_netdev_pmd_thread *pmd,
                 //hmap_shrink(&time_based_cache);
             }
 
-            #ifdef OFPROTO_H_DEBUG
+#ifdef OFPROTO_H_DEBUG
             VLOG_INFO("MXC[test]:cache first have the info about the cache");
             
             VLOG_INFO("mxc[first.test]src_IP_flow: %d", entry->nw_src);
@@ -7179,12 +7183,12 @@ dp_netdev_input__(struct dp_netdev_pmd_thread *pmd,
             VLOG_INFO("mxc[first.test]proto_flow: %d", entry->nw_proto);
             VLOG_INFO("mxc[first.test]src_port_flow: %d", entry->tp_src);
             VLOG_INFO("mxc[first.test]src_port_flow: %d", entry->tp_dst);
-            #endif
+#endif
         }
-        #ifdef OFPROTO_H_DEBUG
+#ifdef OFPROTO_H_DEBUG
         VLOG_INFO("mxc[test]:test for hashmap limit size %d ", time_based_cache.n);
+#endif
         #endif
-
         packet_batch_per_flow_execute(&batches[i], pmd);
     }
 }

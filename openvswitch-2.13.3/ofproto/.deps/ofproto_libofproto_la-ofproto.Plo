@@ -63,9 +63,14 @@ ofproto/ofproto_libofproto_la-ofproto.lo: ofproto/ofproto.c \
  /usr/include/x86_64-linux-gnu/bits/string3.h lib/compiler.h \
  include/openvswitch/compiler.h include/openvswitch/util.h \
  include/openvswitch/version.h include/openvswitch/types.h \
- ofproto/bundles.h ofproto/connmgr.h lib/classifier.h lib/cmap.h \
- lib/ovs-rcu.h lib/ovs-atomic.h /usr/include/pthread.h \
- /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h ofproto/bundles.h \
+ ofproto/connmgr.h lib/classifier.h lib/cmap.h lib/ovs-rcu.h \
+ lib/ovs-atomic.h /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h lib/ovs-atomic-c11.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h \
@@ -111,16 +116,17 @@ ofproto/ofproto_libofproto_la-ofproto.lo: ofproto/ofproto.c \
  include/openvswitch/ofp-packet.h include/openvswitch/uuid.h \
  include/openvswitch/ofp-msgs.h lib/util.h lib/byte-order.h \
  lib/connectivity.h lib/coverage.h lib/dp-packet.h lib/netdev-afxdp.h \
- lib/netdev-dpdk.h lib/flow.h lib/hash.h lib/netdev.h lib/nx-match.h \
- include/openvswitch/ofp-bundle.h include/openvswitch/ofp-match.h \
- include/openvswitch/ofp-monitor.h include/openvswitch/ofp-print.h \
- include/openvswitch/ofp-queue.h include/openvswitch/ofp-util.h \
- include/openvswitch/vlog.h include/openvswitch/token-bucket.h \
- lib/packets.h ofproto/pinsched.h include/openvswitch/poll-loop.h \
- /usr/include/poll.h /usr/include/x86_64-linux-gnu/sys/poll.h \
+ lib/netdev-dpdk.h lib/flow.h lib/hash.h lib/netdev.h lib/hmapx.h \
+ lib/nx-match.h include/openvswitch/ofp-bundle.h \
+ include/openvswitch/ofp-match.h include/openvswitch/ofp-monitor.h \
+ include/openvswitch/ofp-print.h include/openvswitch/ofp-queue.h \
+ include/openvswitch/ofp-util.h include/openvswitch/vlog.h \
+ include/openvswitch/token-bucket.h lib/packets.h ofproto/pinsched.h \
+ include/openvswitch/poll-loop.h /usr/include/poll.h \
+ /usr/include/x86_64-linux-gnu/sys/poll.h \
  /usr/include/x86_64-linux-gnu/bits/poll.h \
  /usr/include/x86_64-linux-gnu/bits/poll2.h lib/random.h lib/seq.h \
- lib/unaligned.h lib/unixctl.h
+ lib/unaligned.h lib/unixctl.h debug.h
 
 /usr/include/stdc-predef.h:
 
@@ -305,6 +311,16 @@ include/openvswitch/util.h:
 include/openvswitch/version.h:
 
 include/openvswitch/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 ofproto/bundles.h:
 
@@ -546,6 +562,8 @@ lib/hash.h:
 
 lib/netdev.h:
 
+lib/hmapx.h:
+
 lib/nx-match.h:
 
 include/openvswitch/ofp-bundle.h:
@@ -585,3 +603,5 @@ lib/seq.h:
 lib/unaligned.h:
 
 lib/unixctl.h:
+
+debug.h:

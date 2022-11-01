@@ -72,7 +72,12 @@ lib/ofp-protocol.lo: lib/ofp-protocol.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  include/openvswitch/token-bucket.h lib/util.h /usr/include/arpa/inet.h \
- /usr/include/inttypes.h lib/compiler.h
+ /usr/include/inttypes.h lib/compiler.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h
 
 /usr/include/stdc-predef.h:
 
@@ -291,3 +296,13 @@ lib/util.h:
 /usr/include/inttypes.h:
 
 lib/compiler.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:

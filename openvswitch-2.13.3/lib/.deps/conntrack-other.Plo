@@ -62,11 +62,16 @@ lib/conntrack-other.lo: lib/conntrack-other.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/string2.h \
  /usr/include/x86_64-linux-gnu/bits/string3.h include/openvswitch/util.h \
  include/openvswitch/version.h include/openvswitch/types.h \
- lib/ovs-atomic-c11.h /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h \
- lib/conntrack.h lib/latch.h include/odp-netlink.h \
- include/openvswitch/types.h include/openvswitch/hmap.h \
- include/openvswitch/list.h include/openvswitch/thread.h lib/ovs-thread.h \
- lib/packets.h include/openvswitch/geneve.h include/openvswitch/packets.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/ovs-atomic-c11.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h lib/conntrack.h \
+ lib/latch.h include/odp-netlink.h include/openvswitch/types.h \
+ include/openvswitch/hmap.h include/openvswitch/list.h \
+ include/openvswitch/thread.h lib/ovs-thread.h lib/packets.h \
+ include/openvswitch/geneve.h include/openvswitch/packets.h \
  include/openvswitch/tun-metadata.h include/openvswitch/nsh.h \
  lib/random.h lib/hash.h lib/tun-metadata.h \
  include/openvswitch/dynamic-string.h lib/netlink.h \
@@ -268,6 +273,16 @@ include/openvswitch/util.h:
 include/openvswitch/version.h:
 
 include/openvswitch/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/ovs-atomic-c11.h:
 

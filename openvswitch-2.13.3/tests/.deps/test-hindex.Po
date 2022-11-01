@@ -58,8 +58,13 @@ tests/test-hindex.o: tests/test-hindex.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/string3.h lib/compiler.h \
  include/openvswitch/compiler.h include/openvswitch/util.h \
  include/openvswitch/version.h include/openvswitch/types.h \
- /usr/include/assert.h lib/hash.h tests/ovstest.h lib/compiler.h \
- lib/command-line.h lib/random.h lib/util.h
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h /usr/include/assert.h \
+ lib/hash.h tests/ovstest.h lib/compiler.h lib/command-line.h \
+ lib/random.h lib/util.h
 
 /usr/include/stdc-predef.h:
 
@@ -220,6 +225,16 @@ include/openvswitch/util.h:
 include/openvswitch/version.h:
 
 include/openvswitch/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 /usr/include/assert.h:
 

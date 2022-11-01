@@ -80,7 +80,12 @@ lib/ofp-print.lo: lib/ofp-print.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /usr/include/x86_64-linux-gnu/bits/xopen_lim.h lib/tun-metadata.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/tun-metadata.h \
  include/openvswitch/dynamic-string.h lib/netlink.h \
  lib/netlink-protocol.h include/linux/netlink.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -97,9 +102,9 @@ lib/ofp-print.lo: lib/ofp-print.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h lib/flow.h \
  /usr/include/netinet/icmp6.h lib/bitmap.h include/openvswitch/flow.h \
  lib/learn.h lib/multipath.h lib/netdev.h include/openvswitch/netdev.h \
- lib/nx-match.h include/openvswitch/meta-flow.h \
- /usr/include/netinet/ip6.h include/openvswitch/ofp-protocol.h \
- lib/odp-util.h include/openvswitch/hmap.h \
+ lib/hmapx.h include/openvswitch/hmap.h lib/nx-match.h \
+ include/openvswitch/meta-flow.h /usr/include/netinet/ip6.h \
+ include/openvswitch/ofp-protocol.h lib/odp-util.h \
  include/openvswitch/ofp-actions.h include/openvswitch/ofp-ed-props.h \
  include/openvswitch/uuid.h include/openvswitch/ofp-bundle.h \
  include/openvswitch/ofp-flow.h include/openvswitch/match.h \
@@ -356,6 +361,16 @@ lib/util.h:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
+
 lib/tun-metadata.h:
 
 include/openvswitch/dynamic-string.h:
@@ -422,6 +437,10 @@ lib/netdev.h:
 
 include/openvswitch/netdev.h:
 
+lib/hmapx.h:
+
+include/openvswitch/hmap.h:
+
 lib/nx-match.h:
 
 include/openvswitch/meta-flow.h:
@@ -431,8 +450,6 @@ include/openvswitch/meta-flow.h:
 include/openvswitch/ofp-protocol.h:
 
 lib/odp-util.h:
-
-include/openvswitch/hmap.h:
 
 include/openvswitch/ofp-actions.h:
 

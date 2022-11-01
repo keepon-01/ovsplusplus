@@ -75,7 +75,11 @@ lib/ofp-errors.lo: lib/ofp-errors.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  include/openvswitch/token-bucket.h lib/util.h lib/compiler.h \
- lib/ofp-errors.inc
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/ofp-errors.inc
 
 /usr/include/stdc-predef.h:
 
@@ -294,5 +298,15 @@ include/openvswitch/token-bucket.h:
 lib/util.h:
 
 lib/compiler.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/ofp-errors.inc:

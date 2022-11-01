@@ -66,7 +66,12 @@ lib/ofp-util.lo: lib/ofp-util.c /usr/include/stdc-predef.h config.h \
  /usr/include/wchar.h /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
  /usr/include/x86_64-linux-gnu/bits/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/stdio2.h lib/compiler.h \
- include/openvswitch/util.h include/openvswitch/version.h lib/bundle.h \
+ include/openvswitch/util.h include/openvswitch/version.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/bundle.h \
  include/openflow/nicira-ext.h include/openvswitch/ofp-errors.h \
  lib/byte-order.h lib/classifier.h lib/cmap.h lib/ovs-rcu.h \
  lib/ovs-atomic.h /usr/include/pthread.h /usr/include/sched.h \
@@ -95,9 +100,9 @@ lib/ofp-util.lo: lib/ofp-util.c /usr/include/stdc-predef.h config.h \
  /usr/include/linux/const.h /usr/include/linux/socket.h \
  /usr/include/linux/genetlink.h include/openvswitch/ofpbuf.h \
  include/openvswitch/list.h lib/unaligned.h lib/timeval.h lib/flow.h \
- lib/nx-match.h lib/id-pool.h include/openflow/netronome-ext.h \
- include/openvswitch/json.h include/openvswitch/shash.h \
- include/openvswitch/hmap.h include/openvswitch/ofp-actions.h \
+ lib/hmapx.h include/openvswitch/hmap.h lib/nx-match.h lib/id-pool.h \
+ include/openflow/netronome-ext.h include/openvswitch/json.h \
+ include/openvswitch/shash.h include/openvswitch/ofp-actions.h \
  include/openvswitch/ofp-ed-props.h include/openvswitch/ofp-msgs.h \
  include/openvswitch/ofp-print.h include/openvswitch/ofp-prop.h \
  include/openvswitch/vlog.h include/openvswitch/thread.h \
@@ -300,6 +305,16 @@ include/openvswitch/util.h:
 
 include/openvswitch/version.h:
 
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
+
 lib/bundle.h:
 
 include/openflow/nicira-ext.h:
@@ -422,6 +437,10 @@ lib/timeval.h:
 
 lib/flow.h:
 
+lib/hmapx.h:
+
+include/openvswitch/hmap.h:
+
 lib/nx-match.h:
 
 lib/id-pool.h:
@@ -431,8 +450,6 @@ include/openflow/netronome-ext.h:
 include/openvswitch/json.h:
 
 include/openvswitch/shash.h:
-
-include/openvswitch/hmap.h:
 
 include/openvswitch/ofp-actions.h:
 

@@ -78,7 +78,11 @@ ovsdb/ovsdb_libovsdb_la-log.lo: ovsdb/log.c /usr/include/stdc-predef.h \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/socket2.h \
  /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/arpa/inet.h \
- /usr/include/inttypes.h lib/ovs-atomic-c11.h \
+ /usr/include/inttypes.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/ovs-atomic-c11.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h lib/ovs-rcu.h \
  lib/ovs-atomic.h lib/ovs-thread.h lib/ovsdb-error.h ovsdb/ovsdb.h \
  include/openvswitch/uuid.h include/openvswitch/poll-loop.h \
@@ -316,6 +320,16 @@ lib/util.h:
 /usr/include/arpa/inet.h:
 
 /usr/include/inttypes.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/ovs-atomic-c11.h:
 

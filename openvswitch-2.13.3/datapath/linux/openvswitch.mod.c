@@ -25,4 +25,4 @@ __attribute__((section(".modinfo"))) =
 "depends=nf_conntrack,tunnel6,nf_nat,libcrc32c,nf_nat_ipv6,nf_nat_ipv4,nf_defrag_ipv6";
 
 
-MODULE_INFO(srcversion, "F8C619FF7B3CCB30869262D");
+MODULE_INFO(srcversion, "1463798D844DD94D5B109AC");

@@ -60,8 +60,13 @@ ovsdb/ovsdb_libovsdb_la-raft-rpc.lo: ovsdb/raft-rpc.c \
  /usr/include/string.h /usr/include/x86_64-linux-gnu/bits/string.h \
  /usr/include/x86_64-linux-gnu/bits/string2.h \
  /usr/include/x86_64-linux-gnu/bits/string3.h lib/compiler.h \
- lib/jsonrpc.h lib/ovsdb-error.h lib/ovsdb-parser.h \
- include/openvswitch/json.h include/openvswitch/shash.h lib/sset.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/jsonrpc.h lib/ovsdb-error.h \
+ lib/ovsdb-parser.h include/openvswitch/json.h \
+ include/openvswitch/shash.h lib/sset.h \
  include/openvswitch/dynamic-string.h include/openvswitch/vlog.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h include/openvswitch/list.h \
  include/openvswitch/thread.h /usr/include/pthread.h /usr/include/sched.h \
@@ -242,6 +247,16 @@ lib/string.h:
 /usr/include/x86_64-linux-gnu/bits/string3.h:
 
 lib/compiler.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/jsonrpc.h:
 

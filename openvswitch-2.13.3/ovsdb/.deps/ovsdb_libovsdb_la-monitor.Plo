@@ -61,7 +61,11 @@ ovsdb/ovsdb_libovsdb_la-monitor.lo: ovsdb/monitor.c \
  include/openvswitch/compiler.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdbool.h \
  include/openvswitch/util.h include/openvswitch/version.h \
- include/openvswitch/types.h ovsdb/column.h lib/compiler.h \
+ include/openvswitch/types.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h ovsdb/column.h lib/compiler.h \
  lib/ovsdb-types.h /usr/lib/gcc/x86_64-linux-gnu/5/include/float.h \
  lib/uuid.h include/openvswitch/uuid.h \
  include/openvswitch/dynamic-string.h include/openvswitch/json.h \
@@ -250,6 +254,16 @@ include/openvswitch/util.h:
 include/openvswitch/version.h:
 
 include/openvswitch/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 ovsdb/column.h:
 

@@ -60,7 +60,12 @@ lib/dpif-netdev.lo: lib/dpif-netdev.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h lib/tun-metadata.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/tun-metadata.h \
  include/openvswitch/dynamic-string.h lib/netlink.h \
  lib/netlink-protocol.h include/linux/netlink.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -81,10 +86,11 @@ lib/dpif-netdev.lo: lib/dpif-netdev.c /usr/include/stdc-predef.h config.h \
  lib/timeval.h /usr/include/x86_64-linux-gnu/bits/timex.h lib/flow.h \
  /usr/include/netinet/icmp6.h lib/bitmap.h include/openflow/nicira-ext.h \
  include/openvswitch/flow.h lib/netdev.h include/openvswitch/netdev.h \
- include/openvswitch/ofp-meter.h include/openvswitch/ofp-protocol.h \
- lib/ovs-numa.h include/openvswitch/hmap.h lib/dpif-netdev-private.h \
- lib/cmap.h lib/ovs-rcu.h lib/ovs-atomic.h /usr/include/pthread.h \
- /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
+ lib/hmapx.h include/openvswitch/hmap.h include/openvswitch/ofp-meter.h \
+ include/openvswitch/ofp-protocol.h lib/ovs-numa.h \
+ lib/dpif-netdev-private.h lib/cmap.h lib/ovs-rcu.h lib/ovs-atomic.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h lib/ovs-atomic-c11.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h /usr/include/ctype.h \
  /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
@@ -121,19 +127,18 @@ lib/dpif-netdev.lo: lib/dpif-netdev.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/mathinline.h \
  include/openvswitch/vlog.h include/openvswitch/token-bucket.h \
  lib/unixctl.h lib/dpif-provider.h lib/dummy.h lib/fat-rwlock.h \
- lib/hmapx.h lib/id-pool.h lib/ipf.h lib/netdev-offload.h \
- lib/netdev-provider.h lib/connectivity.h lib/seq.h \
- include/openvswitch/shash.h lib/smap.h lib/netdev-vport.h \
- lib/odp-execute.h lib/odp-util.h include/openvswitch/ofp-actions.h \
- include/openvswitch/meta-flow.h /usr/include/netinet/ip6.h \
- include/openvswitch/ofp-errors.h include/openvswitch/ofp-ed-props.h \
- include/openvswitch/uuid.h include/openvswitch/match.h \
- include/openvswitch/ofp-parse.h include/openvswitch/ofp-print.h \
- include/openvswitch/poll-loop.h /usr/include/poll.h \
- /usr/include/x86_64-linux-gnu/sys/poll.h \
+ lib/id-pool.h lib/ipf.h lib/netdev-offload.h lib/netdev-provider.h \
+ lib/connectivity.h lib/seq.h include/openvswitch/shash.h lib/smap.h \
+ lib/netdev-vport.h lib/odp-execute.h lib/odp-util.h \
+ include/openvswitch/ofp-actions.h include/openvswitch/meta-flow.h \
+ /usr/include/netinet/ip6.h include/openvswitch/ofp-errors.h \
+ include/openvswitch/ofp-ed-props.h include/openvswitch/uuid.h \
+ include/openvswitch/match.h include/openvswitch/ofp-parse.h \
+ include/openvswitch/ofp-print.h include/openvswitch/poll-loop.h \
+ /usr/include/poll.h /usr/include/x86_64-linux-gnu/sys/poll.h \
  /usr/include/x86_64-linux-gnu/bits/poll.h \
  /usr/include/x86_64-linux-gnu/bits/poll2.h lib/pvector.h lib/sset.h \
- lib/tnl-neigh-cache.h lib/tnl-ports.h lib/uuid.h
+ lib/tnl-neigh-cache.h lib/tnl-ports.h lib/uuid.h debug.h
 
 /usr/include/stdc-predef.h:
 
@@ -325,6 +330,16 @@ lib/stdio.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
+
 lib/tun-metadata.h:
 
 include/openvswitch/dynamic-string.h:
@@ -407,13 +422,15 @@ lib/netdev.h:
 
 include/openvswitch/netdev.h:
 
+lib/hmapx.h:
+
+include/openvswitch/hmap.h:
+
 include/openvswitch/ofp-meter.h:
 
 include/openvswitch/ofp-protocol.h:
 
 lib/ovs-numa.h:
-
-include/openvswitch/hmap.h:
 
 lib/dpif-netdev-private.h:
 
@@ -545,8 +562,6 @@ lib/dummy.h:
 
 lib/fat-rwlock.h:
 
-lib/hmapx.h:
-
 lib/id-pool.h:
 
 lib/ipf.h:
@@ -606,3 +621,5 @@ lib/tnl-neigh-cache.h:
 lib/tnl-ports.h:
 
 lib/uuid.h:
+
+debug.h:

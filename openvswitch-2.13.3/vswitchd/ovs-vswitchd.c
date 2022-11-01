@@ -69,9 +69,16 @@ struct ovs_vswitchd_exit_args {
     bool *cleanup;
 };
 
+struct statistic *ctx;
+
 int
 main(int argc, char *argv[])
 {   
+
+    //记录统计的信息
+    ctx = calloc(1, sizeof(struct statistic));
+    ctx->st = shard_init(ctx->st, ctx->shmid);
+
     char *unixctl_path = NULL;
     struct unixctl_server *unixctl;
     char *remote;
@@ -147,7 +154,7 @@ main(int argc, char *argv[])
     vlog_disable_async();
     ovsrcu_exit();
     dns_resolve_destroy();
-
+    //shmctl(ctx->shmid, IPC_RMID, (struct shared_use_st *)ctx->st);
     return 0;
 }
 

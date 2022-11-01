@@ -65,7 +65,11 @@ ofproto/ofproto_libofproto_la-ofproto-dpif-monitor.lo: \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h include/openvswitch/util.h \
- include/openvswitch/version.h lib/tun-metadata.h \
+ include/openvswitch/version.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/tun-metadata.h \
  include/openvswitch/dynamic-string.h lib/netlink.h \
  lib/netlink-protocol.h include/linux/netlink.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -90,7 +94,7 @@ ofproto/ofproto_libofproto_la-ofproto-dpif-monitor.lo: \
  lib/ovs-atomic-c11.h /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h \
  include/openvswitch/thread.h lib/hash.h lib/heap.h lib/latch.h \
  ofproto/ofproto-dpif.h lib/dpif.h lib/dpdk.h lib/dp-packet.h \
- lib/netdev.h include/openvswitch/netdev.h \
+ lib/netdev.h include/openvswitch/netdev.h lib/hmapx.h \
  include/openvswitch/ofp-meter.h include/openvswitch/ofp-protocol.h \
  lib/ovs-numa.h ofproto/fail-open.h ofproto/ofproto-provider.h \
  lib/classifier.h lib/cmap.h lib/ovs-rcu.h include/openvswitch/match.h \
@@ -309,6 +313,16 @@ include/openvswitch/util.h:
 
 include/openvswitch/version.h:
 
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
+
 lib/tun-metadata.h:
 
 include/openvswitch/dynamic-string.h:
@@ -424,6 +438,8 @@ lib/dp-packet.h:
 lib/netdev.h:
 
 include/openvswitch/netdev.h:
+
+lib/hmapx.h:
 
 include/openvswitch/ofp-meter.h:
 

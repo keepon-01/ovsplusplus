@@ -69,7 +69,12 @@ lib/ofp-monitor.lo: lib/ofp-monitor.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h lib/byte-order.h \
  /usr/include/arpa/inet.h /usr/include/inttypes.h lib/nx-match.h \
  lib/compiler.h lib/flow.h /usr/include/netinet/icmp6.h lib/bitmap.h \
- lib/util.h lib/packets.h include/openvswitch/nsh.h include/odp-netlink.h \
+ lib/util.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/packets.h \
+ include/openvswitch/nsh.h include/odp-netlink.h \
  include/openvswitch/types.h lib/random.h lib/hash.h lib/tun-metadata.h \
  lib/netlink.h lib/netlink-protocol.h include/linux/netlink.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -305,6 +310,16 @@ lib/flow.h:
 lib/bitmap.h:
 
 lib/util.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/packets.h:
 

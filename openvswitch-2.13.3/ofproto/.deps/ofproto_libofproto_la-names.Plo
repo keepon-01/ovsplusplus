@@ -63,7 +63,12 @@ ofproto/ofproto_libofproto_la-names.lo: ofproto/names.c \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
  /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h lib/tun-metadata.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/tun-metadata.h \
  include/openvswitch/dynamic-string.h lib/netlink.h \
  lib/netlink-protocol.h include/linux/netlink.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -95,7 +100,7 @@ ofproto/ofproto_libofproto_la-names.lo: ofproto/names.c \
  ofproto/netflow.h lib/sset.h lib/rstp.h lib/smap.h lib/stp.h lib/lacp.h \
  lib/dpif.h lib/dpdk.h lib/dp-packet.h lib/netdev-afxdp.h \
  lib/netdev-dpdk.h lib/flow.h lib/netdev.h include/openvswitch/netdev.h \
- include/openvswitch/ofp-meter.h lib/ovs-numa.h
+ lib/hmapx.h include/openvswitch/ofp-meter.h lib/ovs-numa.h
 
 /usr/include/stdc-predef.h:
 
@@ -279,6 +284,16 @@ lib/stdio.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
+
 lib/tun-metadata.h:
 
 include/openvswitch/dynamic-string.h:
@@ -422,6 +437,8 @@ lib/flow.h:
 lib/netdev.h:
 
 include/openvswitch/netdev.h:
+
+lib/hmapx.h:
 
 include/openvswitch/ofp-meter.h:
 

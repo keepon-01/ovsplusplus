@@ -60,7 +60,11 @@ lib/bfd.lo: lib/bfd.c /usr/include/stdc-predef.h config.h lib/bfd.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h include/openvswitch/util.h \
- include/openvswitch/version.h lib/tun-metadata.h \
+ include/openvswitch/version.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/tun-metadata.h \
  include/openvswitch/dynamic-string.h lib/netlink.h \
  lib/netlink-protocol.h include/linux/netlink.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -84,9 +88,9 @@ lib/bfd.lo: lib/bfd.c /usr/include/stdc-predef.h config.h lib/bfd.h \
  lib/connectivity.h lib/csum.h lib/dp-packet.h lib/netdev-afxdp.h \
  lib/netdev-dpdk.h lib/flow.h /usr/include/netinet/icmp6.h lib/bitmap.h \
  include/openflow/nicira-ext.h include/openvswitch/flow.h lib/dpif.h \
- lib/dpdk.h lib/netdev.h include/openvswitch/netdev.h \
- include/openvswitch/ofp-meter.h include/openvswitch/ofp-protocol.h \
- lib/ovs-numa.h include/openvswitch/hmap.h lib/odp-util.h \
+ lib/dpdk.h lib/netdev.h include/openvswitch/netdev.h lib/hmapx.h \
+ include/openvswitch/hmap.h include/openvswitch/ofp-meter.h \
+ include/openvswitch/ofp-protocol.h lib/ovs-numa.h lib/odp-util.h \
  include/openvswitch/ofp-actions.h include/openvswitch/meta-flow.h \
  /usr/include/netinet/ip6.h include/openvswitch/ofp-errors.h \
  include/openvswitch/ofp-ed-props.h include/openvswitch/uuid.h \
@@ -279,6 +283,16 @@ include/openvswitch/util.h:
 
 include/openvswitch/version.h:
 
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
+
 lib/tun-metadata.h:
 
 include/openvswitch/dynamic-string.h:
@@ -381,13 +395,15 @@ lib/netdev.h:
 
 include/openvswitch/netdev.h:
 
+lib/hmapx.h:
+
+include/openvswitch/hmap.h:
+
 include/openvswitch/ofp-meter.h:
 
 include/openvswitch/ofp-protocol.h:
 
 lib/ovs-numa.h:
-
-include/openvswitch/hmap.h:
 
 lib/odp-util.h:
 

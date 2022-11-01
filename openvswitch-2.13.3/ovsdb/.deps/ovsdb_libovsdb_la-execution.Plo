@@ -61,7 +61,12 @@ ovsdb/ovsdb_libovsdb_la-execution.lo: ovsdb/execution.c \
  /usr/include/x86_64-linux-gnu/bits/stdio2.h lib/string.h \
  /usr/include/string.h /usr/include/x86_64-linux-gnu/bits/string.h \
  /usr/include/x86_64-linux-gnu/bits/string2.h \
- /usr/include/x86_64-linux-gnu/bits/string3.h lib/ovsdb-condition.h \
+ /usr/include/x86_64-linux-gnu/bits/string3.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/ovsdb-condition.h \
  ovsdb/file.h include/openvswitch/json.h ovsdb/mutation.h \
  lib/ovsdb-error.h lib/ovsdb-parser.h lib/sset.h ovsdb/query.h \
  ovsdb/rbac.h ovsdb/row.h ovsdb/server.h ovsdb/table.h lib/timeval.h \
@@ -253,6 +258,16 @@ lib/string.h:
 /usr/include/x86_64-linux-gnu/bits/string2.h:
 
 /usr/include/x86_64-linux-gnu/bits/string3.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/ovsdb-condition.h:
 

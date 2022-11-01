@@ -58,11 +58,16 @@ tests/test-util.o: tests/test-util.c /usr/include/stdc-predef.h config.h \
  include/openvswitch/compiler.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdbool.h lib/util.h \
  include/openvswitch/util.h include/openvswitch/version.h \
- include/openvswitch/types.h /usr/include/assert.h /usr/include/getopt.h \
- lib/byte-order.h lib/command-line.h tests/ovstest.h lib/compiler.h \
- lib/random.h lib/sat-math.h include/openvswitch/vlog.h \
- /usr/include/x86_64-linux-gnu/bits/timex.h include/openvswitch/list.h \
- include/openvswitch/thread.h /usr/include/pthread.h /usr/include/sched.h \
+ include/openvswitch/types.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h /usr/include/assert.h \
+ /usr/include/getopt.h lib/byte-order.h lib/command-line.h \
+ tests/ovstest.h lib/compiler.h lib/random.h lib/sat-math.h \
+ include/openvswitch/vlog.h /usr/include/x86_64-linux-gnu/bits/timex.h \
+ include/openvswitch/list.h include/openvswitch/thread.h \
+ /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  include/openvswitch/token-bucket.h
@@ -226,6 +231,16 @@ include/openvswitch/util.h:
 include/openvswitch/version.h:
 
 include/openvswitch/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 /usr/include/assert.h:
 

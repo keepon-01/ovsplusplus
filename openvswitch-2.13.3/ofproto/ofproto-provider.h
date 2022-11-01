@@ -394,7 +394,7 @@ struct rule {
 
     /* Timeouts. */
     uint16_t hard_timeout OVS_GUARDED; /* In seconds from ->modified. */
-    uint16_t idle_timeout OVS_GUARDED; /* In seconds from ->used. */
+    long long int idle_timeout OVS_GUARDED; /* In seconds from ->used. */
 
     /* Eviction precedence. */
     const uint16_t importance;

@@ -62,9 +62,13 @@ lib/conntrack.lo: lib/conntrack.c /usr/include/stdc-predef.h config.h \
  include/openvswitch/compiler.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdbool.h \
  include/openvswitch/util.h include/openvswitch/version.h \
- include/openvswitch/types.h lib/conntrack.h lib/cmap.h lib/ovs-rcu.h \
- lib/ovs-atomic.h /usr/include/pthread.h /usr/include/sched.h \
- /usr/include/x86_64-linux-gnu/bits/sched.h \
+ include/openvswitch/types.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/conntrack.h lib/cmap.h \
+ lib/ovs-rcu.h lib/ovs-atomic.h /usr/include/pthread.h \
+ /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h lib/ovs-atomic-c11.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h lib/latch.h \
@@ -95,7 +99,7 @@ lib/conntrack.lo: lib/conntrack.c /usr/include/stdc-predef.h config.h \
  /usr/include/netinet/ip6.h lib/ct-dpif.h lib/ipf.h lib/dp-packet.h \
  lib/netdev-afxdp.h lib/netdev-dpdk.h lib/flow.h \
  include/openflow/nicira-ext.h include/openvswitch/flow.h lib/coverage.h \
- lib/csum.h lib/netdev.h include/openvswitch/netdev.h \
+ lib/csum.h lib/netdev.h include/openvswitch/netdev.h lib/hmapx.h \
  include/openvswitch/vlog.h include/openvswitch/token-bucket.h \
  include/openvswitch/poll-loop.h /usr/include/poll.h \
  /usr/include/x86_64-linux-gnu/sys/poll.h \
@@ -278,6 +282,16 @@ include/openvswitch/version.h:
 
 include/openvswitch/types.h:
 
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
+
 lib/conntrack.h:
 
 lib/cmap.h:
@@ -423,6 +437,8 @@ lib/csum.h:
 lib/netdev.h:
 
 include/openvswitch/netdev.h:
+
+lib/hmapx.h:
 
 include/openvswitch/vlog.h:
 

@@ -69,7 +69,12 @@ tests/test-ovsdb.o: tests/test-ovsdb.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h lib/util.h lib/string.h \
  /usr/include/string.h /usr/include/x86_64-linux-gnu/bits/string.h \
  /usr/include/x86_64-linux-gnu/bits/string2.h \
- /usr/include/x86_64-linux-gnu/bits/string3.h lib/ovsdb-condition.h \
+ /usr/include/x86_64-linux-gnu/bits/string3.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/ovsdb-condition.h \
  ovsdb/file.h ovsdb/log.h ovsdb/mutation.h ovsdb/ovsdb.h ovsdb/query.h \
  ovsdb/row.h ovsdb/column.h ovsdb/server.h ovsdb/storage.h ovsdb/table.h \
  ovsdb/transaction.h ovsdb/trigger.h include/openvswitch/poll-loop.h \
@@ -307,6 +312,16 @@ lib/string.h:
 /usr/include/x86_64-linux-gnu/bits/string2.h:
 
 /usr/include/x86_64-linux-gnu/bits/string3.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/ovsdb-condition.h:
 

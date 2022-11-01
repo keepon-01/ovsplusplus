@@ -231,6 +231,8 @@ void ovs_dp_detach_port(struct vport *p)
 }
 
 /* Must be called with rcu_read_lock. */
+//sk_buff 是linux网络中最核心的结构体，用来管理和控制接受和发送数据包的信息
+//
 void ovs_dp_process_packet(struct sk_buff *skb, struct sw_flow_key *key)
 {
 	const struct vport *p = OVS_CB(skb)->input_vport;
@@ -271,6 +273,7 @@ void ovs_dp_process_packet(struct sk_buff *skb, struct sw_flow_key *key)
 
 out:
 	/* Update datapath statistics. */
+	//这里是有计数的，但是这个计数是针对的每条流的计数吗？看了是每个cpu上的datapath计数
 	u64_stats_update_begin(&stats->syncp);
 	(*stats_counter)++;
 	stats->n_mask_hit += n_mask_hit;

@@ -92,7 +92,11 @@ tests/test-vconn.o: tests/test-vconn.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/sys/un.h /usr/include/netinet/in.h \
  /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/netinet/in_systm.h \
  /usr/include/netinet/ip.h lib/stream.h lib/socket-util.h lib/util.h \
- /usr/include/arpa/inet.h lib/stream-ssl.h lib/timeval.h \
+ /usr/include/arpa/inet.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/stream-ssl.h lib/timeval.h \
  include/openvswitch/type-props.h lib/util.h
 
 /usr/include/stdc-predef.h:
@@ -372,6 +376,16 @@ lib/socket-util.h:
 lib/util.h:
 
 /usr/include/arpa/inet.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/stream-ssl.h:
 

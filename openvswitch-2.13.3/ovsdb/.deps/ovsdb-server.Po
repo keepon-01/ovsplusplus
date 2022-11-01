@@ -76,7 +76,12 @@ ovsdb/ovsdb-server.o: ovsdb/ovsdb-server.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h include/openvswitch/json.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h include/openvswitch/json.h \
  include/openvswitch/shash.h include/openvswitch/hmap.h lib/jsonrpc.h \
  ovsdb/jsonrpc-server.h include/openvswitch/list.h lib/memory.h \
  ovsdb/monitor.h ovsdb/ovsdb.h lib/ovsdb-data.h lib/ovsdb-types.h \
@@ -324,6 +329,16 @@ lib/util.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 include/openvswitch/json.h:
 

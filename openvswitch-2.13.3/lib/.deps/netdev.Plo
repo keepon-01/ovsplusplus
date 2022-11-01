@@ -60,7 +60,11 @@ lib/netdev.lo: lib/netdev.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h include/openvswitch/util.h \
- include/openvswitch/version.h lib/tun-metadata.h \
+ include/openvswitch/version.h /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/tun-metadata.h \
  include/openvswitch/dynamic-string.h lib/netlink.h \
  lib/netlink-protocol.h include/linux/netlink.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -81,9 +85,9 @@ lib/netdev.lo: lib/netdev.c /usr/include/stdc-predef.h config.h \
  include/openvswitch/type-props.h lib/timeval.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h lib/flow.h \
  /usr/include/netinet/icmp6.h lib/bitmap.h include/openflow/nicira-ext.h \
- include/openvswitch/flow.h /usr/include/errno.h \
- /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
- /usr/include/x86_64-linux-gnu/asm/errno.h \
+ include/openvswitch/flow.h lib/hmapx.h include/openvswitch/hmap.h \
+ /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
@@ -104,8 +108,8 @@ lib/netdev.lo: lib/netdev.c /usr/include/stdc-predef.h config.h \
  lib/ovs-thread.h include/openvswitch/thread.h lib/dpif.h lib/dpdk.h \
  lib/dp-packet.h lib/netdev-afxdp.h lib/netdev-dpdk.h \
  include/openvswitch/ofp-meter.h include/openvswitch/ofp-protocol.h \
- lib/ovs-numa.h include/openvswitch/hmap.h lib/fatal-signal.h \
- /usr/include/signal.h /usr/include/x86_64-linux-gnu/bits/signum.h \
+ lib/ovs-numa.h lib/fatal-signal.h /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo.h \
  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
  /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
@@ -306,6 +310,16 @@ include/openvswitch/util.h:
 
 include/openvswitch/version.h:
 
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
+
 lib/tun-metadata.h:
 
 include/openvswitch/dynamic-string.h:
@@ -385,6 +399,10 @@ lib/bitmap.h:
 include/openflow/nicira-ext.h:
 
 include/openvswitch/flow.h:
+
+lib/hmapx.h:
+
+include/openvswitch/hmap.h:
 
 /usr/include/errno.h:
 
@@ -471,8 +489,6 @@ include/openvswitch/ofp-meter.h:
 include/openvswitch/ofp-protocol.h:
 
 lib/ovs-numa.h:
-
-include/openvswitch/hmap.h:
 
 lib/fatal-signal.h:
 

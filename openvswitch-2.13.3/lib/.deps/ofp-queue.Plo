@@ -62,12 +62,17 @@ lib/ofp-queue.lo: lib/ofp-queue.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/stdio2.h lib/compiler.h \
  include/openvswitch/util.h include/openvswitch/version.h \
- include/openflow/nicira-ext.h include/openvswitch/flow.h \
- include/openvswitch/packets.h include/openvswitch/tun-metadata.h \
- include/openvswitch/geneve.h lib/packets.h include/openvswitch/nsh.h \
- include/odp-netlink.h include/openvswitch/types.h lib/random.h \
- lib/hash.h lib/tun-metadata.h include/openvswitch/dynamic-string.h \
- lib/netlink.h lib/netlink-protocol.h include/linux/netlink.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h include/openflow/nicira-ext.h \
+ include/openvswitch/flow.h include/openvswitch/packets.h \
+ include/openvswitch/tun-metadata.h include/openvswitch/geneve.h \
+ lib/packets.h include/openvswitch/nsh.h include/odp-netlink.h \
+ include/openvswitch/types.h lib/random.h lib/hash.h lib/tun-metadata.h \
+ include/openvswitch/dynamic-string.h lib/netlink.h \
+ lib/netlink-protocol.h include/linux/netlink.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
  /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
@@ -274,6 +279,16 @@ lib/compiler.h:
 include/openvswitch/util.h:
 
 include/openvswitch/version.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 include/openflow/nicira-ext.h:
 

@@ -57,8 +57,12 @@ tests/test-hash.o: tests/test-hash.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h lib/compiler.h \
  include/openvswitch/compiler.h include/openvswitch/util.h \
  include/openvswitch/version.h include/openvswitch/types.h \
- /usr/include/assert.h lib/jhash.h tests/ovstest.h lib/compiler.h \
- lib/command-line.h
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h /usr/include/assert.h \
+ lib/jhash.h tests/ovstest.h lib/compiler.h lib/command-line.h
 
 /usr/include/stdc-predef.h:
 
@@ -219,6 +223,16 @@ include/openvswitch/util.h:
 include/openvswitch/version.h:
 
 include/openvswitch/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 /usr/include/assert.h:
 

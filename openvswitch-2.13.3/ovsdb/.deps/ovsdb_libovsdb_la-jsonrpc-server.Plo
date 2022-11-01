@@ -60,11 +60,16 @@ ovsdb/ovsdb_libovsdb_la-jsonrpc-server.lo: ovsdb/jsonrpc-server.c \
  /usr/include/string.h /usr/include/x86_64-linux-gnu/bits/string.h \
  /usr/include/x86_64-linux-gnu/bits/string2.h \
  /usr/include/x86_64-linux-gnu/bits/string3.h lib/compiler.h \
- include/openvswitch/util.h include/openvswitch/version.h ovsdb/column.h \
- lib/compiler.h lib/ovsdb-types.h \
- /usr/lib/gcc/x86_64-linux-gnu/5/include/float.h lib/uuid.h \
- include/openvswitch/uuid.h include/openvswitch/dynamic-string.h \
- ovsdb/monitor.h include/openvswitch/json.h include/openvswitch/shash.h \
+ include/openvswitch/util.h include/openvswitch/version.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h ovsdb/column.h lib/compiler.h \
+ lib/ovsdb-types.h /usr/lib/gcc/x86_64-linux-gnu/5/include/float.h \
+ lib/uuid.h include/openvswitch/uuid.h \
+ include/openvswitch/dynamic-string.h ovsdb/monitor.h \
+ include/openvswitch/json.h include/openvswitch/shash.h \
  include/openvswitch/hmap.h lib/jsonrpc.h lib/ovsdb-error.h \
  lib/ovsdb-parser.h lib/sset.h ovsdb/ovsdb.h include/openvswitch/list.h \
  ovsdb/condition.h lib/ovsdb-data.h lib/ovsdb-types.h \
@@ -257,6 +262,16 @@ lib/compiler.h:
 include/openvswitch/util.h:
 
 include/openvswitch/version.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 ovsdb/column.h:
 

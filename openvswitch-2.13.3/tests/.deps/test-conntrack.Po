@@ -60,8 +60,13 @@ tests/test-conntrack.o: tests/test-conntrack.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/string2.h \
  /usr/include/x86_64-linux-gnu/bits/string3.h include/openvswitch/util.h \
  include/openvswitch/version.h include/openvswitch/types.h \
- lib/ovs-atomic-c11.h /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h \
- lib/latch.h include/odp-netlink.h include/openvswitch/types.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/ovs-atomic-c11.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h lib/latch.h \
+ include/odp-netlink.h include/openvswitch/types.h \
  include/openvswitch/hmap.h include/openvswitch/list.h \
  include/openvswitch/thread.h lib/ovs-thread.h lib/packets.h \
  include/openvswitch/geneve.h include/openvswitch/packets.h \
@@ -95,8 +100,9 @@ tests/test-conntrack.o: tests/test-conntrack.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/sigstack.h \
  /usr/include/x86_64-linux-gnu/sys/ucontext.h \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h lib/flow.h lib/netdev.h \
- include/openvswitch/netdev.h lib/ovs-thread.h tests/ovstest.h \
- lib/compiler.h lib/command-line.h lib/pcap-file.h lib/timeval.h
+ include/openvswitch/netdev.h lib/hmapx.h lib/ovs-thread.h \
+ tests/ovstest.h lib/compiler.h lib/command-line.h lib/pcap-file.h \
+ lib/timeval.h
 
 /usr/include/stdc-predef.h:
 
@@ -274,6 +280,16 @@ include/openvswitch/version.h:
 
 include/openvswitch/types.h:
 
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
+
 lib/ovs-atomic-c11.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h:
@@ -413,6 +429,8 @@ lib/flow.h:
 lib/netdev.h:
 
 include/openvswitch/netdev.h:
+
+lib/hmapx.h:
 
 lib/ovs-thread.h:
 

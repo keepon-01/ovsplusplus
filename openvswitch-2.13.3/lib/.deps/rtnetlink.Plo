@@ -70,10 +70,14 @@ lib/rtnetlink.lo: lib/rtnetlink.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/string2.h \
  /usr/include/x86_64-linux-gnu/bits/string3.h lib/compiler.h \
  include/openvswitch/util.h include/openvswitch/version.h \
- /usr/include/linux/genetlink.h lib/netlink-notifier.h \
- include/openvswitch/list.h include/openvswitch/ofpbuf.h \
- include/openvswitch/dynamic-string.h lib/packets.h \
- include/openvswitch/geneve.h include/openvswitch/packets.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h /usr/include/linux/genetlink.h \
+ lib/netlink-notifier.h include/openvswitch/list.h \
+ include/openvswitch/ofpbuf.h include/openvswitch/dynamic-string.h \
+ lib/packets.h include/openvswitch/geneve.h include/openvswitch/packets.h \
  include/openvswitch/tun-metadata.h include/openvswitch/nsh.h \
  include/odp-netlink.h include/openvswitch/types.h lib/random.h \
  lib/hash.h lib/tun-metadata.h include/openflow/openflow.h \
@@ -289,6 +293,16 @@ lib/compiler.h:
 include/openvswitch/util.h:
 
 include/openvswitch/version.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 /usr/include/linux/genetlink.h:
 

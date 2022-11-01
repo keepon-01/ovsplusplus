@@ -57,7 +57,12 @@ lib/stp.lo: lib/stp.c /usr/include/stdc-predef.h config.h lib/stp.h \
  /usr/include/x86_64-linux-gnu/bits/string2.h \
  /usr/include/x86_64-linux-gnu/bits/string3.h include/openvswitch/util.h \
  include/openvswitch/version.h include/openvswitch/types.h \
- lib/byte-order.h lib/connectivity.h include/openvswitch/ofpbuf.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/byte-order.h \
+ lib/connectivity.h include/openvswitch/ofpbuf.h \
  include/openvswitch/dynamic-string.h include/openvswitch/list.h \
  lib/ovs-atomic.h /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
@@ -249,6 +254,16 @@ include/openvswitch/util.h:
 include/openvswitch/version.h:
 
 include/openvswitch/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/byte-order.h:
 

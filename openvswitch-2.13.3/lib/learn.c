@@ -93,7 +93,7 @@ learn_check(const struct ofpact_learn *learn, const struct match *src_match)
  *
  * The caller must eventually destroy fm->match.
  *
- * The caller has to actually execute 'fm'. */
+ * The caller has to actually execute 'fm'. *///这是个啥
 void
 learn_execute(const struct ofpact_learn *learn, const struct flow *flow,
               struct ofputil_flow_mod *fm, struct ofpbuf *ofpacts)

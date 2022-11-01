@@ -62,7 +62,12 @@ ofproto/ofproto_libofproto_la-ofproto-dpif-xlate.lo: \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h lib/tun-metadata.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/tun-metadata.h \
  include/openvswitch/dynamic-string.h lib/netlink.h \
  lib/netlink-protocol.h include/linux/netlink.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -105,7 +110,7 @@ ofproto/ofproto_libofproto_la-ofproto-dpif-xlate.lo: \
  lib/ovs-thread.h include/openvswitch/shash.h lib/simap.h lib/timeval.h \
  lib/tun-metadata.h lib/versions.h lib/vl-mff-map.h lib/uuid.h \
  ofproto/ofproto-dpif.h lib/dpif.h lib/dpdk.h lib/dp-packet.h \
- lib/netdev.h lib/ovs-numa.h ofproto/fail-open.h \
+ lib/netdev.h lib/hmapx.h lib/ovs-numa.h ofproto/fail-open.h \
  ofproto/ofproto-provider.h lib/hmapx.h lib/id-pool.h ofproto/ofproto.h \
  lib/ovs-lldp.h lib/lldp/lldpd.h lib/lldp/lldpd-structs.h \
  /usr/include/net/if.h lib/lldp/aa-structs.h lib/lldp/lldp-const.h \
@@ -312,6 +317,16 @@ lib/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/tun-metadata.h:
 
@@ -524,6 +539,8 @@ lib/dpdk.h:
 lib/dp-packet.h:
 
 lib/netdev.h:
+
+lib/hmapx.h:
 
 lib/ovs-numa.h:
 

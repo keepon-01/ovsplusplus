@@ -68,7 +68,12 @@ lib/netdev-dummy.lo: lib/netdev-dummy.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h lib/tun-metadata.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/tun-metadata.h \
  include/openvswitch/dynamic-string.h lib/netlink.h \
  lib/netlink-protocol.h include/linux/netlink.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -89,11 +94,11 @@ lib/netdev-dummy.lo: lib/netdev-dummy.c /usr/include/stdc-predef.h \
  lib/timeval.h /usr/include/x86_64-linux-gnu/bits/timex.h lib/flow.h \
  /usr/include/netinet/icmp6.h lib/bitmap.h include/openflow/nicira-ext.h \
  include/openvswitch/flow.h lib/dpif-netdev.h lib/dpif.h lib/dpdk.h \
- lib/netdev.h include/openvswitch/netdev.h \
- include/openvswitch/ofp-meter.h include/openvswitch/ofp-protocol.h \
- lib/ovs-numa.h include/openvswitch/hmap.h lib/netdev-offload-provider.h \
- lib/netdev-offload.h lib/netdev-provider.h lib/connectivity.h \
- lib/ovs-rcu.h lib/ovs-atomic.h /usr/include/pthread.h \
+ lib/netdev.h include/openvswitch/netdev.h lib/hmapx.h \
+ include/openvswitch/hmap.h include/openvswitch/ofp-meter.h \
+ include/openvswitch/ofp-protocol.h lib/ovs-numa.h \
+ lib/netdev-offload-provider.h lib/netdev-offload.h lib/netdev-provider.h \
+ lib/connectivity.h lib/ovs-rcu.h lib/ovs-atomic.h /usr/include/pthread.h \
  /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h lib/ovs-atomic-c11.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h lib/seq.h \
@@ -322,6 +327,16 @@ lib/stdio.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
+
 lib/tun-metadata.h:
 
 include/openvswitch/dynamic-string.h:
@@ -410,13 +425,15 @@ lib/netdev.h:
 
 include/openvswitch/netdev.h:
 
+lib/hmapx.h:
+
+include/openvswitch/hmap.h:
+
 include/openvswitch/ofp-meter.h:
 
 include/openvswitch/ofp-protocol.h:
 
 lib/ovs-numa.h:
-
-include/openvswitch/hmap.h:
 
 lib/netdev-offload-provider.h:
 

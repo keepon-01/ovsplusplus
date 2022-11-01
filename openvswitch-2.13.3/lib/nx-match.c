@@ -38,7 +38,7 @@
 #include "unaligned.h"
 #include "util.h"
 #include "vl-mff-map.h"
-
+#include "debug.h"
 VLOG_DEFINE_THIS_MODULE(nx_match);
 
 /* OXM headers.
@@ -590,7 +590,9 @@ nx_pull_raw(const uint8_t *p, unsigned int match_len, bool strict,
     }
 
     match->flow.tunnel.metadata.tab = NULL;
+    #ifdef LOG
     VLOG_INFO("mxc:flowmod 源0 %d,源1 %d, 源2 %d ", match->flow.dl_src.ea[0], match->flow.dl_src.ea[1], match->flow.dl_src.ea[2]);
+    #endif
     return 0;
 }
 

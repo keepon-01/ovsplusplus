@@ -58,8 +58,12 @@ lib/netlink.lo: lib/netlink.c /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/string3.h lib/compiler.h \
  include/openvswitch/compiler.h include/openvswitch/util.h \
  include/openvswitch/version.h include/openvswitch/types.h \
- include/linux/netlink.h /usr/include/linux/types.h \
- /usr/include/x86_64-linux-gnu/asm/types.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h include/linux/netlink.h \
+ /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
  /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
  /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
@@ -257,6 +261,16 @@ include/openvswitch/util.h:
 include/openvswitch/version.h:
 
 include/openvswitch/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 include/linux/netlink.h:
 

@@ -59,8 +59,13 @@ ovsdb/ovsdb_libovsdb_la-server.lo: ovsdb/server.c \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
  /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h lib/compiler.h ovsdb/ovsdb.h \
- lib/compiler.h lib/uuid.h
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h lib/compiler.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h ovsdb/ovsdb.h lib/compiler.h \
+ lib/uuid.h
 
 /usr/include/stdc-predef.h:
 
@@ -231,6 +236,16 @@ lib/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
 lib/compiler.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 ovsdb/ovsdb.h:
 

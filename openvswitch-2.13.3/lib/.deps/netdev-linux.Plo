@@ -72,7 +72,12 @@ lib/netdev-linux.lo: lib/netdev-linux.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h lib/tun-metadata.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/tun-metadata.h \
  include/openvswitch/dynamic-string.h lib/netlink.h \
  lib/netlink-protocol.h include/linux/netlink.h \
  /usr/include/linux/netlink.h /usr/include/linux/const.h \
@@ -86,8 +91,8 @@ lib/netdev-linux.lo: lib/netdev-linux.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h lib/flow.h \
  /usr/include/netinet/icmp6.h lib/bitmap.h include/openflow/nicira-ext.h \
  include/openvswitch/flow.h lib/netdev-afxdp-pool.h lib/netdev-provider.h \
- lib/connectivity.h lib/netdev.h include/openvswitch/netdev.h \
- lib/netdev-offload.h lib/ovs-numa.h include/openvswitch/hmap.h \
+ lib/connectivity.h lib/netdev.h include/openvswitch/netdev.h lib/hmapx.h \
+ include/openvswitch/hmap.h lib/netdev-offload.h lib/ovs-numa.h \
  lib/ovs-rcu.h lib/ovs-atomic.h /usr/include/pthread.h \
  /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h lib/ovs-atomic-c11.h \
@@ -376,6 +381,16 @@ lib/stdio.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
+
 lib/tun-metadata.h:
 
 include/openvswitch/dynamic-string.h:
@@ -442,11 +457,13 @@ lib/netdev.h:
 
 include/openvswitch/netdev.h:
 
+lib/hmapx.h:
+
+include/openvswitch/hmap.h:
+
 lib/netdev-offload.h:
 
 lib/ovs-numa.h:
-
-include/openvswitch/hmap.h:
 
 lib/ovs-rcu.h:
 

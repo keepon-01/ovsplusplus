@@ -64,7 +64,12 @@ ofproto/ofproto_libofproto_la-ofproto-dpif-upcall.lo: \
  /usr/include/x86_64-linux-gnu/bits/string2.h \
  /usr/include/x86_64-linux-gnu/bits/string3.h include/openvswitch/util.h \
  include/openvswitch/version.h include/openvswitch/types.h \
- lib/ovs-atomic-c11.h /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h \
+ /usr/include/x86_64-linux-gnu/sys/shm.h \
+ /usr/include/x86_64-linux-gnu/sys/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/ipctypes.h \
+ /usr/include/x86_64-linux-gnu/bits/ipc.h \
+ /usr/include/x86_64-linux-gnu/bits/shm.h lib/ovs-atomic-c11.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdatomic.h \
  include/openvswitch/match.h include/openvswitch/flow.h \
  include/openflow/nicira-ext.h include/openflow/openflow.h \
  include/openflow/openflow-1.0.h include/openflow/openflow-common.h \
@@ -107,8 +112,8 @@ ofproto/ofproto_libofproto_la-ofproto-dpif-upcall.lo: \
  include/openvswitch/ofp-packet.h include/openvswitch/uuid.h \
  lib/coverage.h lib/cmap.h lib/dpif-provider.h lib/dpif.h lib/dpdk.h \
  lib/dp-packet.h lib/netdev-afxdp.h lib/netdev-dpdk.h lib/flow.h \
- lib/netdev.h lib/ovs-numa.h lib/dpif.h ofproto/fail-open.h lib/latch.h \
- lib/netlink.h ofproto/ofproto-dpif-ipfix.h lib/odp-util.h \
+ lib/netdev.h lib/hmapx.h lib/ovs-numa.h lib/dpif.h ofproto/fail-open.h \
+ lib/latch.h lib/netlink.h ofproto/ofproto-dpif-ipfix.h lib/odp-util.h \
  ofproto/ofproto-dpif-sflow.h lib/svec.h ofproto/ofproto-dpif-xlate.h \
  lib/dp-packet.h lib/odp-util.h ofproto/ofproto-dpif-mirror.h lib/util.h \
  ofproto/ofproto-dpif-rid.h ofproto/ofproto-provider.h lib/uuid.h \
@@ -124,7 +129,7 @@ ofproto/ofproto_libofproto_la-ofproto-dpif-upcall.lo: \
  /usr/include/x86_64-linux-gnu/bits/poll.h \
  /usr/include/x86_64-linux-gnu/bits/poll2.h lib/seq.h ofproto/tunnel.h \
  lib/unixctl.h lib/netdev-provider.h lib/connectivity.h \
- lib/netdev-offload.h lib/seq.h lib/smap.h
+ lib/netdev-offload.h lib/seq.h lib/smap.h debug.h
 
 /usr/include/stdc-predef.h:
 
@@ -317,6 +322,16 @@ include/openvswitch/util.h:
 include/openvswitch/version.h:
 
 include/openvswitch/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/shm.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/shm.h:
 
 lib/ovs-atomic-c11.h:
 
@@ -534,6 +549,8 @@ lib/flow.h:
 
 lib/netdev.h:
 
+lib/hmapx.h:
+
 lib/ovs-numa.h:
 
 lib/dpif.h:
@@ -629,3 +646,5 @@ lib/netdev-offload.h:
 lib/seq.h:
 
 lib/smap.h:
+
+debug.h:
